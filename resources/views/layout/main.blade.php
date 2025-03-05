@@ -22,7 +22,7 @@
             <li class="nav-item"
                 style="{{ request()->routeIs('property') || request()->routeIs('invoice') ?  : '' }}">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#residenceMenu"
-                    aria-expanded="true" aria-controls="collapseBootstrap" style="{{ request()->routeIs('property') || request()->routeIs('invoice') ? 'color: #45a9ea;' : '' }}">
+                    aria-expanded="true" aria-controls="collapseBootstrap" style="{{ request()->routeIs('property') || request()->routeIs('invoice') ? 'color: #45a9ea; font-weight: bold;' : '' }}">
                     <i class="fas fa-home" style="color: inherit;"></i>
                     <span>Property</span>
                 </a>
@@ -235,7 +235,7 @@
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item dropdown no-arrow mx-1">
                             <a class="nav-link dropdown-toggle" href="#" id="invoiceDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="Unpaid Invoices">
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="Notification">
                                 <i class="fas fa-bell fa-fw" style="color: black;"></i>
                                 <span class="badge badge-danger badge-counter" id="unpaid-invoice-count"
                                     style="display: none;">0</span>
@@ -243,11 +243,11 @@
                             <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="invoiceDropdown">
                                 <h6 class="dropdown-header" style="background-color: black; color: white;  border: none;">
-                                    Unpaid Invoices</h6>
+                                    Notification</h6>
                                 <div id="invoice-notifications" style="max-height: 300px; overflow-y: auto;">
-                                    <p class="dropdown-item text-center small text-gray-500">No unpaid invoices</p>
+                                    <p class="dropdown-item text-center small text-gray-500">No Notification</p>
                                 </div>
-                                <a class="dropdown-item text-center small text-gray-500" href="">View All Invoices</a>
+                                <a class="dropdown-item text-center small text-gray-500" href="">View All Notification</a>
                             </div>
                         </li>
 
@@ -289,10 +289,6 @@
                                 <a class="dropdown-item" href="">
                                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Profile
-                                </a>
-                                <a class="dropdown-item" href="">
-                                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Company
                                 </a>
 
                                 <div class="dropdown-divider"></div>
