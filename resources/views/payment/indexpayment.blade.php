@@ -81,6 +81,32 @@
                         <div id="containerPayment" class="table-responsive">
                             <table class="table table-hover table-bordered text-center rounded-lg shadow-sm"
                                 id="tablePayment">
+                                <thead>
+                                        <tr>
+                                            <th>Total :</th>
+                                            <th></th>
+                                            <th></th>
+                                            <th></th>
+                                            <th></th>
+                                            <th></th>
+                                            <th></th>
+                                            <th></th>
+                                            <th>Rp. 5.707.000.000,00</th>
+                                            <th></th>
+                                            <th></th>
+                                            <th>Rp 693.333.000,00</th>
+                                            <th></th>
+                                            <th></th>
+                                            <th></th>
+                                            <th></th>
+                                            <th></th>
+                                            <th></th>
+                                            <th></th>
+                                            <th></th>
+                                            <th></th>
+                                            <th>13,68%</th>
+                                        </tr>
+                                    </thead>
                                 <thead style="background-color: #45a9ea; color: white;">
                                     <tr>
                                         <th>Properti</th>
