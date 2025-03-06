@@ -12,6 +12,8 @@ class PropertyController extends Controller
         if (!Auth::check()) {
             return redirect()->route('login');
         }
+
+        session(['active_menu' => 'developer']);
         return view('property.indexproperty');
     }
 }
