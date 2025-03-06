@@ -12,6 +12,8 @@ class BranchController extends Controller
         if (!Auth::check()) {
             return redirect()->route('login');
         }
+
+        session(['active_menu' => 'kost']);
         return view('branch.indexbranch');
     }
 }

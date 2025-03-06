@@ -74,7 +74,7 @@
 
         $("#menuKost").click(function () {
             if (userRole === 'kost' || userRole === 'admin') {
-                window.location.href = '/kost';
+                window.location.href = '/branch';
             } else {
                 Swal.fire({
                     icon: 'error',
