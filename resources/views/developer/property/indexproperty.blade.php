@@ -86,18 +86,18 @@
                                     <thead>
                                         <tr>
                                             <th>Total :</th>
-                                            <!-- <th></th>
+                                            <th></th>
                                                 <th></th>
-                                                <th></th>
+                                                <!-- <th></th>
                                                 <th></th>
                                                 <th></th>
                                                 <th></th> -->
                                             <!-- <th></th> -->
                                             <th></th>
                                             <th></th>
+                                            <th></th>
                                             <th>Rp5.100.000.000,00</th>
                                             <th>Rp3.070.000.000,00</th>
-                                            <th></th>
                                             <th></th>
                                             <th>Rp885.000.000,00</th>
                                             <th>28,83%</th>
@@ -105,9 +105,9 @@
                                     </thead>
                                     <thead style="background-color: #45a9ea; color: white;">
                                         <tr>
-                                            <!-- <th>Properti</th>
+                                            <th>Properti</th>
                                                 <th>Proyek</th>
-                                                <th>Blok</th>
+                                                <!-- <th>Blok</th>
                                                 <th>No</th>
                                                 <th>LB</th>
                                                 <th>LT</th> -->
@@ -143,9 +143,9 @@
                                             <td>-</td>
                                         </tr>
                                         <tr>
-                                            <!-- <td>Ruko 2 lantai</td>
+                                            <td>Ruko 2 lantai</td>
                                                 <td>Pilar 12</td>
-                                                <td>B</td>
+                                                <!-- <td>B</td>
                                                 <td>2</td>
                                                 <td>200</td>
                                                 <td>120</td> -->
@@ -161,9 +161,9 @@
                                             <td>0,51%</td>
                                         </tr>
                                         <tr>
-                                            <!-- <td>Ruko 2 lantai</td>
+                                            <td>Ruko 2 lantai</td>
                                                 <td>Pilar 12</td>
-                                                <td>C</td>
+                                                <!-- <td>C</td>
                                                 <td>3</td>
                                                 <td>200</td>
                                                 <td>120</td> -->
@@ -179,9 +179,9 @@
                                             <td>30,00%</td>
                                         </tr>
                                         <tr>
-                                            <!-- <td>Rumah 2 lantai</td>
+                                            <td>Rumah 2 lantai</td>
                                                 <td>Victory</td>
-                                                <td>D</td>
+                                                <!-- <td>D</td>
                                                 <td>4</td>
                                                 <td>140</td>
                                                 <td>100</td> -->
@@ -197,9 +197,9 @@
                                             <td>37,50%</td>
                                         </tr>
                                         <tr>
-                                            <!-- <td>Rumah 1 lantai</td>
+                                            <td>Rumah 1 lantai</td>
                                                 <td>Padjajaran</td>
-                                                <td>E</td>
+                                                <!-- <td>E</td>
                                                 <td>5</td>
                                                 <td>30</td>
                                                 <td>60</td> -->

@@ -12,6 +12,6 @@ class InvoiceController extends Controller
         if (!Auth::check()) {
             return redirect()->route('login');
         }
-        return view('property.indexinvoice');
+        return view('developer.property.indexinvoice');
     }
 }

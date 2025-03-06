@@ -12,6 +12,6 @@ class CustomerController extends Controller
         if (!Auth::check()) {
             return redirect()->route('login');
         }
-        return view('customer.indexcustomer');
+        return view('developer.customer.indexcustomer');
     }
 }

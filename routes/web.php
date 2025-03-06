@@ -9,6 +9,9 @@ use App\Http\Controllers\{
     Admin\PaymentController,
     Admin\BranchController,
     Admin\ProyekController,
+    Admin\KostPropertyController,
+    Admin\KostPaymentController,
+    Admin\KostCustomerController,
     Admin\CalendarController,
 };
 use Illuminate\Support\Facades\Route;
@@ -21,9 +24,18 @@ Route::post('/login', [LoginController::class, 'ajaxLogin'])->name('login.ajax')
 
 Route::middleware('auth')->group(function () {
     Route::get('/index', [indexController::class, 'index'])->name('index');
+    //kost
+    Route::get('/branch', [BranchController::class, 'index'])->name('branch');
 
-    // Developer
+    Route::get('/kostproperty', [KostPropertyController::class, 'index'])->name('kostproperty');
 
+    Route::get('/kostpayment', [KostPaymentController::class, 'index'])->name('kostpayment');
+
+    Route::get('/kostcustomer', [KostCustomerController::class, 'index'])->name('kostcustomer');
+
+    Route::get('/calendar', [CalendarController::class, 'index'])->name('calendar');
+
+    //developer
     Route::get('/proyek', [ProyekController::class, 'index'])->name('proyek');
 
     Route::get('/payment', [PaymentController::class, 'index'])->name('payment');
@@ -33,13 +45,6 @@ Route::middleware('auth')->group(function () {
     Route::get('/property', [PropertyController::class, 'index'])->name('property');
 
     Route::get('/customer', [CustomerController::class, 'index'])->name('customer');
-
-
-    // Kost
-
-    Route::get('/branch', [BranchController::class, 'index'])->name('branch');
-
-    Route::get('/calendar', [CalendarController::class, 'index'])->name('calendar');
 
     Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 });

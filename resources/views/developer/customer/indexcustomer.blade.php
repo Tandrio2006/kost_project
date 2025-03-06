@@ -6,7 +6,7 @@
 
     <div class="container-fluid" id="container-wrapper">
         <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800 px-4 font-weight-bold" style="color: #45a9ea;">Data Customer</h1>
+            <h1 class="h3 mb-0 text-gray-800 px-4 font-weight-bold" style="color: #45a9ea;">Customer</h1>
             <ol class="breadcrumb bg-light px-3 py-2 rounded shadow-sm">
                 <li class="breadcrumb-item text-secondary">Customer</li>
             </ol>
