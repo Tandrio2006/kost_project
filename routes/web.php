@@ -7,7 +7,7 @@ use App\Http\Controllers\{
     Admin\PropertyController,
     Admin\InvoiceController,
     Admin\PaymentController,
-    Admin\KostController,
+    Admin\BranchController,
 };
 use Illuminate\Support\Facades\Route;
 
@@ -20,7 +20,7 @@ Route::post('/login', [LoginController::class, 'ajaxLogin'])->name('login.ajax')
 Route::middleware('auth')->group(function () {
     Route::get('/index', [indexController::class, 'index'])->name('index');
 
-    Route::get('/kost', [KostController::class, 'index'])->name('kost');
+    Route::get('/branch', [BranchController::class, 'index'])->name('branch');
 
     Route::get('/payment', [PaymentController::class, 'index'])->name('payment');
 

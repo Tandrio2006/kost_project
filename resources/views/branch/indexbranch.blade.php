@@ -1,10 +1,10 @@
-@extends('layout.app')
+@extends('layout.main')
 
-@section('title', 'kost')
+@section('title', 'Branch')
 
 @section('content')
 
-
+  
 
 
 
