@@ -14,6 +14,6 @@ class CalendarController extends Controller
         }
 
         session(['active_menu' => 'kost']);
-        return view('calendar.indexcalendar');
+        return view('kost.calendar.indexcalendar');
     }
 }
