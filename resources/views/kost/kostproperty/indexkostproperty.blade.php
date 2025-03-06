@@ -76,13 +76,13 @@
             <div class="col-xl-12">
                 <ul class="nav nav-tabs">
                     <li class="nav-item">
-                        <a class="nav-links nav-link active" aria-current="page" href="#" data-tab="newton">Newton</a>
+                        <a class="nav-link nav-links active" aria-current="page" href="#" data-tab="newton">Newton</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-links nav-link" href="#" data-tab="newtonNew">Newton New</a>
+                        <a class="nav-link nav-links" href="#" data-tab="newtonNew">Newton New</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-links nav-link" href="#" data-tab="pilar12">Pilar 12</a>
+                        <a class="nav-link nav-links" href="#" data-tab="pilar12">Pilar 12</a>
                     </li>
                 </ul>
                 <div class="tab-content mt-3">
@@ -361,10 +361,10 @@
                 currentImageIndex = (currentImageIndex + 1) % images.length;
                 document.getElementById("kostImage").src = images[currentImageIndex];
             }
-            $('.nav-link').click(function (e) {
+            $('.nav-links').click(function (e) {
                 e.preventDefault();
 
-                $('.nav-link').removeClass('active');
+                $('.nav-links').removeClass('active');
                 $('.tab-pane').removeClass('show active');
 
                 $(this).addClass('active');
