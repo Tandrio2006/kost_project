@@ -12,6 +12,7 @@ class ProyekController extends Controller
         if (!Auth::check()) {
             return redirect()->route('login');
         }
+        session(['active_menu' => 'developer']);
         return view('proyek.indexproyek');
     }
 }

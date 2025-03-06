@@ -35,3 +35,11 @@
         <span>Customer</span>
     </a>
 </li>
+
+<li class="nav-item" style="{{ request()->routeIs(patterns: 'proyek') ?: '' }}">
+    <a class="nav-link" href="{{ route('proyek') }}"
+        style="{{ request()->routeIs('proyek') ? 'color: #45a9ea; font-weight: bold;' : '' }}">
+        <i class="fas fa-project-diagram" style="color: inherit;"></i>
+        <span>proyek</span>
+    </a>
+</li>
