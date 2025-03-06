@@ -1,6 +1,6 @@
-<li class="nav-item" style="{{ request()->routeIs('payment') ?: '' }}">
-    <a class="nav-link" href="{{ route('payment') }}"
-        style="{{ request()->routeIs('payment') ? 'color: #45a9ea; font-weight: bold;' : '' }}">
+<li class="nav-item" style="{{ request()->routeIs('branch') ?: '' }}">
+    <a class="nav-link" href="{{ route('branch') }}"
+        style="{{ request()->routeIs('branch') ? 'color: #45a9ea; font-weight: bold;' : '' }}">
         <i class="fas fa-code-branch" style="color: inherit;"></i>
         <span>Branch</span>
     </a>
