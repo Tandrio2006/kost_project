@@ -12,6 +12,8 @@ class CalendarController extends Controller
         if (!Auth::check()) {
             return redirect()->route('login');
         }
-        return view('calendar.indexcalendar');
+
+        session(['active_menu' => 'kost']);
+        return view('kost.calendar.indexcalendar');
     }
 }
