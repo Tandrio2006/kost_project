@@ -12,6 +12,6 @@ class PaymentController extends Controller
         if (!Auth::check()) {
             return redirect()->route('login');
         }
-        return view('payment.indexpayment');
+        return view('developer.payment.indexpayment');
     }
 }
