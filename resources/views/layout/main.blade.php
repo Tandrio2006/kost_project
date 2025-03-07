@@ -84,7 +84,7 @@
                                     style="max-width: 70px">
                                 <div class="ml-3 text-dark">
                                     <div class="font-weight-bold">Tandrio</div>
-                                    <div class="small">TLID: 23455</div>
+                                    <!-- <div class="small">TLID: 23455</div> -->
                                 </div>
                             </a>
 
