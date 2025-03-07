@@ -17,9 +17,12 @@ class LoginController extends Controller
 
     public function ajaxLogin(Request $request)
     {
-        $credentials = $request->only('email', 'password');
-    
-        if (Auth::attempt($credentials)) {
+        $loginInput = $request->input('login'); 
+        $password = $request->input('password');
+
+        $loginField = filter_var($loginInput, FILTER_VALIDATE_EMAIL) ? 'email' : 'name';
+
+        if (Auth::attempt([$loginField => $loginInput, 'password' => $password])) {
             $request->session()->regenerate();
     
             return response()->json([
@@ -30,10 +33,11 @@ class LoginController extends Controller
         }
     
         return response()->json([
-            'error' => true, 
-            'message' => 'Email dan Password Salah!'
-        ], 401); 
+            'error' => true,
+            'message' => 'Email/Username atau Password salah!'
+        ], 401);
     }
+    
 
     public function logout(Request $request)
     {

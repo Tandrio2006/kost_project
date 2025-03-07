@@ -14,4 +14,9 @@ class PaymentController extends Controller
         }
         return view('developer.payment.indexpayment');
     }
+    public function indexaddpayment()
+    {
+
+        return view('developer.payment.addpayment');
+    }
 }

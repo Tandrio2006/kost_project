@@ -16,4 +16,9 @@ class PropertyController extends Controller
         session(['active_menu' => 'developer']);
         return view('developer.property.indexproperty');
     }
+    public function indexaddproperty()
+    {
+        session(['active_menu' => 'developer']);
+        return view('developer.property.addproperty');
+    }
 }

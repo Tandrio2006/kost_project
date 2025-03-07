@@ -14,4 +14,9 @@ class InvoiceController extends Controller
         }
         return view('developer.property.indexinvoice');
     }
+    public function indexaddinvoice()
+    {
+
+        return view('developer.property.addinvoice');
+    }
 }

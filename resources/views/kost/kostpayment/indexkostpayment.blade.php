@@ -14,37 +14,37 @@
 
         <!-- Filter Modal -->
         <!-- <div class="modal fade" id="modalFilterTanggal" tabindex="-1" role="dialog" aria-labelledby="modalFilterTanggalTitle" aria-hidden="true">
-                                            <div class="modal-dialog modal-dialog-centered" role="document">
-                                                <div class="modal-content shadow-lg border-0">
-                                                    <div class="modal-header" style="background-color: #45a9ea; color: white;">
-                                                        <h5 class="modal-title" id="modalFilterTanggalTitle">Filter Data</h5>
-                                                        <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
-                                                            <span aria-hidden="true">&times;</span>
-                                                        </button>
-                                                    </div>
-                                                    <div class="modal-body">
-                                                        <div class="form-group">
-                                                            <label class="font-weight-bold">Customer:</label>
-                                                            <select class="form-control select2" id="customer">
-                                                                <option value="" selected disabled>Pilih Customer</option>
-                                                            </select>
+                                                <div class="modal-dialog modal-dialog-centered" role="document">
+                                                    <div class="modal-content shadow-lg border-0">
+                                                        <div class="modal-header" style="background-color: #45a9ea; color: white;">
+                                                            <h5 class="modal-title" id="modalFilterTanggalTitle">Filter Data</h5>
+                                                            <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+                                                                <span aria-hidden="true">&times;</span>
+                                                            </button>
                                                         </div>
-                                                        <div class="form-group">
-                                                            <label class="font-weight-bold">Pilih Tanggal:</label>
-                                                            <div class="d-flex align-items-center">
-                                                                <input type="date" id="startDate" class="form-control rounded-lg" style="width: 200px;">
-                                                                <span class="mx-2 text-muted">sampai</span>
-                                                                <input type="date" id="endDate" class="form-control rounded-lg" style="width: 200px;">
+                                                        <div class="modal-body">
+                                                            <div class="form-group">
+                                                                <label class="font-weight-bold">Customer:</label>
+                                                                <select class="form-control select2" id="customer">
+                                                                    <option value="" selected disabled>Pilih Customer</option>
+                                                                </select>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label class="font-weight-bold">Pilih Tanggal:</label>
+                                                                <div class="d-flex align-items-center">
+                                                                    <input type="date" id="startDate" class="form-control rounded-lg" style="width: 200px;">
+                                                                    <span class="mx-2 text-muted">sampai</span>
+                                                                    <input type="date" id="endDate" class="form-control rounded-lg" style="width: 200px;">
+                                                                </div>
                                                             </div>
                                                         </div>
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                                        <button type="button" id="saveFilterTanggal" class="btn text-white" style="background-color: #45a9ea;">Save</button>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                            <button type="button" id="saveFilterTanggal" class="btn text-white" style="background-color: #45a9ea;">Save</button>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                        </div> -->
+                                            </div> -->
 
         <!-- Table Section -->
         <div class="row">
@@ -73,8 +73,8 @@
                                 <button class="btn btn-danger" id="btnExportInvoice">
                                     <i class="fas fa-file-pdf"></i> Export PDF
                                 </button>
-                                <button type="button" class="btn btn-primary ml-1" id="modalTambahCost"><span
-                                        class="pr-2"><i class="fas fa-plus"></i></span>Tambah Payment</button>
+                                <a class="btn btn-primary" href="{{ route('indexaddpaymentkost') }}" id=""><span class="pr-2"><i
+                                            class="fas fa-plus"></i></span>Buat Payment</a>
                             </div>
                         </div>
 
@@ -88,8 +88,8 @@
                                     <th></th>
                                     <th></th>
                                     <th></th>
-                                    <th>2.900.000,00</th>
                                     <th></th>
+                                    <th>2.900.000,00</th>
                                     <th></th>
                                     <th></th>
                                     <th></th>

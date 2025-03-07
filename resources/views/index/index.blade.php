@@ -55,24 +55,7 @@
                     </div>
                 </a>
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item dropdown no-arrow mx-1">
-                        <a class="nav-link dropdown-toggle" href="#" id="invoiceDropdown" role="button"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="Notification">
-                            <i class="fas fa-bell fa-fw" style="color: black;"></i>
-                            <span class="badge badge-danger badge-counter" id="unpaid-invoice-count"
-                                style="display: none;">0</span>
-                        </a>
-                        <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                            aria-labelledby="invoiceDropdown">
-                            <h6 class="dropdown-header" style="background-color: black; color: white;  border: none;">
-                                Notification</h6>
-                            <div id="invoice-notifications" style="max-height: 300px; overflow-y: auto;">
-                                <p class="dropdown-item text-center small text-gray-500">No Notification</p>
-                            </div>
-                            <a class="dropdown-item text-center small text-gray-500" href="">View All
-                                Notification</a>
-                        </div>
-                    </li>
+
 
                     <div class="topbar-divider d-none d-sm-block"></div>
                     <li class="nav-item dropdown no-arrow">
@@ -115,14 +98,14 @@
                                                 </form>
                                             </div> -->
             <div class="container d-flex align-items-center justify-content-center" style="height: 600px;">
-                <div class="row w-100">
-                    <div class="col-md-6 d-flex justify-content-center">
+                <div class="d-flex justify-content-center w-100">
+                    <div class="mr-5">
                         <div class="box text-center" id="menuDev">
                             <img src="img/icon-developer.png" alt="Developer Icon">
                             <span>DEVELOPER</span>
                         </div>
                     </div>
-                    <div class="col-md-6 d-flex justify-content-center">
+                    <div>
                         <div class="box text-center" id="menuKost">
                             <img src="img/icon-kost.png" alt="Kost Icon">
                             <span>KOST</span>

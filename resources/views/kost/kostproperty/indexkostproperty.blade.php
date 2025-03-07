@@ -104,7 +104,7 @@
                                     </div>
 
                                     <div class="col-md-7">
-                                        <h3 class="text-primary font-weight-bold">Deskripsi Kost</h3>
+                                        <h3 class="text-primary font-weight-bold">Kost Newton</h3>
                                         <ul>
                                             <li><strong>Branch:</strong> Newton</li>
                                             <li>

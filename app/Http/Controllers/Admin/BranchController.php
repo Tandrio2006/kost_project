@@ -16,4 +16,9 @@ class BranchController extends Controller
         session(['active_menu' => 'kost']);
         return view('kost.branch.indexbranch');
     }
+    public function indexaddbranch()
+    {
+        session(['active_menu' => 'kost']);
+        return view('kost.branch.addbranch');
+    }
 }

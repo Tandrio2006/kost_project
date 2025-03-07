@@ -74,8 +74,9 @@
                                 <button class="btn btn-danger" id="btnExportInvoice">
                                     <i class="fas fa-file-pdf"></i> Export PDF
                                 </button>
-                                <button type="button" class="btn btn-primary ml-1" id="modalTambahCost"><span
-                                        class="pr-2"><i class="fas fa-plus"></i></span>Tambah Invoice</button>
+                                <a class="btn btn-primary" href="{{ route('indexaddinvoice') }}" id=""><span class="pr-2"><i
+                                            class="fas fa-plus"></i></span>Buat Invoice</a>
+
                             </div>
                         </div>
 

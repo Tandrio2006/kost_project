@@ -14,4 +14,9 @@ class KostPaymentController extends Controller
         }
         return view('kost.kostpayment.indexkostpayment');
     }
+    public function indexaddpaymentkost()
+    {
+
+        return view('kost.kostpayment.addkostpayment');
+    }
 }

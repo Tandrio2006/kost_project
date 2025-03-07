@@ -42,42 +42,6 @@
                 <li class="breadcrumb-item text-secondary">Calendar</li>
             </ol>
         </div>
-
-        <!-- Filter Modal -->
-        <!-- <div class="modal fade" id="modalFilterTanggal" tabindex="-1" role="dialog" aria-labelledby="modalFilterTanggalTitle" aria-hidden="true">
-                                                    <div class="modal-dialog modal-dialog-centered" role="document">
-                                                        <div class="modal-content shadow-lg border-0">
-                                                            <div class="modal-header" style="background-color: #45a9ea; color: white;">
-                                                                <h5 class="modal-title" id="modalFilterTanggalTitle">Filter Data</h5>
-                                                                <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
-                                                                    <span aria-hidden="true">&times;</span>
-                                                                </button>
-                                                            </div>
-                                                            <div class="modal-body">
-                                                                <div class="form-group">
-                                                                    <label class="font-weight-bold">Customer:</label>
-                                                                    <select class="form-control select2" id="customer">
-                                                                        <option value="" selected disabled>Pilih Customer</option>
-                                                                    </select>
-                                                                </div>
-                                                                <div class="form-group">
-                                                                    <label class="font-weight-bold">Pilih Tanggal:</label>
-                                                                    <div class="d-flex align-items-center">
-                                                                        <input type="date" id="startDate" class="form-control rounded-lg" style="width: 200px;">
-                                                                        <span class="mx-2 text-muted">sampai</span>
-                                                                        <input type="date" id="endDate" class="form-control rounded-lg" style="width: 200px;">
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="modal-footer">
-                                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                                                <button type="button" id="saveFilterTanggal" class="btn text-white" style="background-color: #45a9ea;">Save</button>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div> -->
-
-        <!-- Table Section -->
         <div class="row">
             <div class="col-xl-12">
                 <div class="card shadow-lg border-0  mb-4">
@@ -151,7 +115,7 @@
                                     </tr>
                                     <tr>
                                         <td>Pilar 12</td>
-                                        <td>Standard</td>
+                                        <td>Stpandard</td>
                                         <td>301</td>
                                     </tr>
                                 </tbody>
@@ -170,73 +134,138 @@
 
 @section('script')
     <script>
+        // function getCurrentMonth() {
+        //     const months = [
+        //         'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+        //         'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'
+        //     ];
+
+        //     const currentDate = new Date();
+        //     const currentMonth = months[currentDate.getMonth()];
+        //     const currentYear = currentDate.getFullYear();
+
+        //     return `${currentMonth} ${currentYear}`;
+        // }
+
+        // let selectedMonth = '';
+
+        // $(document).ready(function () {
+        //     $('#calendarTitle').text(getCurrentMonth());
+
+        //     const monthFilterInput = $('#monthEvent');
+
+        //     const flatpickrInstance = flatpickr(monthFilterInput[0], {
+        //         plugins: [
+        //             new monthSelectPlugin({
+        //                 shorthand: true,
+        //                 dateFormat: "M Y",
+        //                 altFormat: "M Y",
+        //                 theme: "light"
+        //             })
+        //         ],
+        //         onChange: function (selectedDates, dateStr, instance) {
+        //             const selectedDate = selectedDates[0];
+        //             selectedMonth = instance.formatDate(selectedDate, "M Y");
+        //             $('#calendarTitle').text(selectedMonth);
+        //             getDataDashboard();
+        //         }
+        //     });
+
+        //     function triggerChange() {
+        //         const today = new Date();
+        //         flatpickrInstance.setDate(today, true);
+        //     }
+
+        //     triggerChange();
+        // });
+        // $(document).ready(function () {
+        //     let today = new Date();
+        //     let year = today.getFullYear();
+        //     let month = today.getMonth();
+        //     let daysInMonth = new Date(year, month + 1, 0).getDate();
+
+        //     let monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+        //     let monthName = monthNames[month];
+
+        //     let $headerRow = $("#headerRow");
+        //     let $tableBody = $("#tableBody");
+
+        //     for (let day = 1; day <= daysInMonth; day++) {
+        //         let formattedDate = `${day}-${monthName}-${year}`;
+        //         $headerRow.append(`<th>${formattedDate}</th>`);
+        //     }
+
+        //     $tableBody.find("tr").each(function () {
+        //         for (let day = 1; day <= daysInMonth; day++) {
+        //             $(this).append("<td></td>");
+        //         }
+        //     });
+        // });
+
         function getCurrentMonth() {
-            const months = [
-                'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
-                'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'
-            ];
+        const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+        const currentDate = new Date();
+        const currentMonth = months[currentDate.getMonth()];
+        const currentYear = currentDate.getFullYear();
+        return `${currentMonth} ${currentYear}`;
+    }
 
-            const currentDate = new Date();
-            const currentMonth = months[currentDate.getMonth()];
-            const currentYear = currentDate.getFullYear();
+    function updateTableForMonth(year, month) {
+        let daysInMonth = new Date(year, month + 1, 0).getDate();
+        let monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+        let monthName = monthNames[month];
 
-            return `${currentMonth} ${currentYear}`;
+        let $headerRow = $("#headerRow");
+        let $tableBody = $("#tableBody");
+
+        // Hapus tanggal lama
+        $headerRow.find("th:gt(2)").remove();
+        $tableBody.find("tr").each(function () {
+            $(this).find("td:gt(2)").remove();
+        });
+
+        // Tambahkan tanggal baru
+        for (let day = 1; day <= daysInMonth; day++) {
+            let formattedDate = `${day}-${monthName}-${year}`;
+            $headerRow.append(`<th>${formattedDate}</th>`);
         }
 
-        let selectedMonth = '';
-
-        $(document).ready(function () {
-            $('#calendarTitle').text(getCurrentMonth());
-
-            const monthFilterInput = $('#monthEvent');
-
-            const flatpickrInstance = flatpickr(monthFilterInput[0], {
-                plugins: [
-                    new monthSelectPlugin({
-                        shorthand: true,
-                        dateFormat: "M Y",
-                        altFormat: "M Y",
-                        theme: "light"
-                    })
-                ],
-                onChange: function (selectedDates, dateStr, instance) {
-                    const selectedDate = selectedDates[0];
-                    selectedMonth = instance.formatDate(selectedDate, "M Y");
-                    $('#calendarTitle').text(selectedMonth);
-                    getDataDashboard();
-                }
-            });
-
-            function triggerChange() {
-                const today = new Date();
-                flatpickrInstance.setDate(today, true);
-            }
-
-            triggerChange();
-        });
-        $(document).ready(function () {
-            let today = new Date();
-            let year = today.getFullYear();
-            let month = today.getMonth();
-            let daysInMonth = new Date(year, month + 1, 0).getDate();
-
-            let monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-            let monthName = monthNames[month];
-
-            let $headerRow = $("#headerRow");
-            let $tableBody = $("#tableBody");
-
+        // Tambahkan sel kosong untuk setiap tanggal dalam bulan
+        $tableBody.find("tr").each(function () {
             for (let day = 1; day <= daysInMonth; day++) {
-                let formattedDate = `${day}-${monthName}-${year}`;
-                $headerRow.append(`<th>${formattedDate}</th>`);
+                $(this).append("<td></td>");
             }
-
-            $tableBody.find("tr").each(function () {
-                for (let day = 1; day <= daysInMonth; day++) {
-                    $(this).append("<td></td>");
-                }
-            });
         });
+    }
+
+    $(document).ready(function () {
+        $('#calendarTitle').text(getCurrentMonth());
+
+        const monthFilterInput = $('#monthEvent');
+
+        const flatpickrInstance = flatpickr(monthFilterInput[0], {
+            plugins: [
+                new monthSelectPlugin({
+                    shorthand: true,
+                    dateFormat: "M Y",
+                    altFormat: "M Y",
+                    theme: "light"
+                })
+            ],
+            onChange: function (selectedDates, dateStr, instance) {
+                const selectedDate = selectedDates[0];
+                const selectedMonth = selectedDate.getMonth();
+                const selectedYear = selectedDate.getFullYear();
+
+                $('#calendarTitle').text(dateStr);
+                updateTableForMonth(selectedYear, selectedMonth);
+            }
+        });
+
+        // Inisialisasi tabel dengan bulan saat ini
+        let today = new Date();
+        updateTableForMonth(today.getFullYear(), today.getMonth());
+    });
 
     </script>
 @endsection
