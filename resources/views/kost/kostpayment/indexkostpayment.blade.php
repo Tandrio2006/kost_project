@@ -127,19 +127,19 @@
                                         <td>Standard</td>
                                         <td>103</td>
                                         <td>12</td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
                                         <td style="background-color: red; color: white;">Card issued wo payment</td>
                                         <td>✓</td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
                                     </tr>
                                     <tr>
                                         <td>Newton</td>
@@ -153,12 +153,12 @@
                                         <td>103985769</td>
                                         <td>19-Feb-25</td>
                                         <td>1-Mar-25</td>
-                                        <td></td>
+                                        <td>-</td>
                                         <td style="background-color: orange; color: white;">Due</td>
                                         <td>✓</td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
                                     </tr>
                                     <tr>
                                         <td>Newton</td>
@@ -172,12 +172,12 @@
                                         <td>103985770</td>
                                         <td>28-Feb-25</td>
                                         <td>10-Mar-25</td>
-                                        <td></td>
+                                        <td>-</td>
                                         <td style="background-color: brown; color: white;">Overdue</td>
                                         <td>✓</td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
                                     </tr>
                                     <tr>
                                         <td>Newton</td>
@@ -191,11 +191,11 @@
                                         <td>103985771</td>
                                         <td>28-Feb-25</td>
                                         <td>10-Mar-25</td>
-                                        <td></td>
+                                        <td>-</td>
                                         <td style="background-color: gray; color: white;">Canceled</td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
                                         <td>82371893</td>
                                     </tr>
                                     <tr>
@@ -213,8 +213,8 @@
                                         <td>2-Mar-25</td>
                                         <td style="background-color: lightblue; color: black;">Paid</td>
                                         <td>✓</td>
-                                        <td></td>
-                                        <td></td>
+                                        <td>-</td>
+                                        <td>-</td>
                                         <td>323291837</td>
                                     </tr>
                                     <tr>
@@ -232,8 +232,8 @@
                                         <td>3-Mar-25</td>
                                         <td style="background-color: lightblue; color: black;">Paid</td>
                                         <td>✓</td>
-                                        <td></td>
-                                        <td></td>
+                                        <td>-</td>
+                                        <td>-</td>
                                         <td>27382739</td>
                                     </tr>
                                 </tbody>

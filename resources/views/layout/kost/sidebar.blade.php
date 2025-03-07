@@ -8,7 +8,7 @@
 <li class="nav-item" style="{{ request()->routeIs('calendar') ?: '' }}">
     <a class="nav-link" href="{{ route('calendar') }}"
         style="{{ request()->routeIs('calendar') ? 'color: #45a9ea; font-weight: bold;' : '' }}">
-        <i class="fas fa-calendar-week"></i>
+        <i class="fas fa-calendar-week" style="color: inherit;"></i>
         <span>Calendar</span>
     </a>
 </li>

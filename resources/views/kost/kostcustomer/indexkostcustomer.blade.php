@@ -100,11 +100,11 @@
                                         <td>Bapak</td>
                                         <td>Bambang Budiono</td>
                                         <td>2171010203669000</td>
-                                        <td></td>
-                                        <td></td>
+                                        <td>-</td>
+                                        <td>-</td>
                                         <td>Bambang Budiono</td>
                                         <td>2171010203669000</td>
-                                        <td></td>
+                                        <td>-</td>
                                         <td>Newton</td>
                                         <td>201</td>
                                     </tr>

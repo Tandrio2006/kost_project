@@ -3,6 +3,37 @@
 @section('title', 'Calendar')
 
 @section('main')
+    <style>
+        .status-indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 8px;
+            border: 1px solid black;
+        }
+
+        .icon {
+            margin-right: 10px;
+            margin-bottom: 5px;
+        }
+
+        .available {
+            background-color: white;
+        }
+
+        .reserved {
+            background-color: #FFB433;
+        }
+
+        .confirmed {
+            background-color: #45a9ea;
+        }
+
+        .unavailable {
+            background-color: grey;
+        }
+    </style>
 
     <div class="container-fluid" id="container-wrapper">
         <div class="d-sm-flex align-items-center justify-content-between mb-4">
@@ -14,37 +45,37 @@
 
         <!-- Filter Modal -->
         <!-- <div class="modal fade" id="modalFilterTanggal" tabindex="-1" role="dialog" aria-labelledby="modalFilterTanggalTitle" aria-hidden="true">
-                                    <div class="modal-dialog modal-dialog-centered" role="document">
-                                        <div class="modal-content shadow-lg border-0">
-                                            <div class="modal-header" style="background-color: #45a9ea; color: white;">
-                                                <h5 class="modal-title" id="modalFilterTanggalTitle">Filter Data</h5>
-                                                <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
-                                                    <span aria-hidden="true">&times;</span>
-                                                </button>
-                                            </div>
-                                            <div class="modal-body">
-                                                <div class="form-group">
-                                                    <label class="font-weight-bold">Customer:</label>
-                                                    <select class="form-control select2" id="customer">
-                                                        <option value="" selected disabled>Pilih Customer</option>
-                                                    </select>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label class="font-weight-bold">Pilih Tanggal:</label>
-                                                    <div class="d-flex align-items-center">
-                                                        <input type="date" id="startDate" class="form-control rounded-lg" style="width: 200px;">
-                                                        <span class="mx-2 text-muted">sampai</span>
-                                                        <input type="date" id="endDate" class="form-control rounded-lg" style="width: 200px;">
+                                                    <div class="modal-dialog modal-dialog-centered" role="document">
+                                                        <div class="modal-content shadow-lg border-0">
+                                                            <div class="modal-header" style="background-color: #45a9ea; color: white;">
+                                                                <h5 class="modal-title" id="modalFilterTanggalTitle">Filter Data</h5>
+                                                                <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+                                                                    <span aria-hidden="true">&times;</span>
+                                                                </button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <div class="form-group">
+                                                                    <label class="font-weight-bold">Customer:</label>
+                                                                    <select class="form-control select2" id="customer">
+                                                                        <option value="" selected disabled>Pilih Customer</option>
+                                                                    </select>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label class="font-weight-bold">Pilih Tanggal:</label>
+                                                                    <div class="d-flex align-items-center">
+                                                                        <input type="date" id="startDate" class="form-control rounded-lg" style="width: 200px;">
+                                                                        <span class="mx-2 text-muted">sampai</span>
+                                                                        <input type="date" id="endDate" class="form-control rounded-lg" style="width: 200px;">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                                <button type="button" id="saveFilterTanggal" class="btn text-white" style="background-color: #45a9ea;">Save</button>
+                                                            </div>
+                                                        </div>
                                                     </div>
-                                                </div>
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                                <button type="button" id="saveFilterTanggal" class="btn text-white" style="background-color: #45a9ea;">Save</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div> -->
+                                                </div> -->
 
         <!-- Table Section -->
         <div class="row">
@@ -52,20 +83,26 @@
                 <div class="card shadow-lg border-0  mb-4">
                     <div class="card-body">
                         <div class="d-flex justify-content-between align-items-center mb-3">
-                            <div class="d-flex">
-                                <div class="input-group" style="width: 250px;">
+                            <div class="d-flex gap-2 align-items-center">
+                                <div class="input-group w-auto" style="max-width: 300px;">
                                     <div class="input-group-prepend">
-                                        <span class="input-group-text text-white" style="background-color: #45a9ea;">
+                                        <span class="input-group-text text-white px-3" style="background-color: #45a9ea;">
                                             <i class="fas fa-search"></i>
                                         </span>
                                     </div>
                                     <input id="txSearch" type="text" class="form-control" placeholder="Search">
                                 </div>
-                                <button type="button" class="btn btn-outline-danger ml-2" id="btnResetDefault"
+
+                                <button id="monthEvent" class="btn btn-light border mr-2 ml-2" style="min-width: 170px;">
+                                    <span id="calendarTitle" class="fs-3"></span>
+                                </button>
+
+                                <button type="button" class="btn btn-outline-danger" id="btnResetDefault"
                                     onclick="window.location.reload()">
                                     Reset
                                 </button>
                             </div>
+
                             <div>
                                 <button class="btn text-white mr-1 bg-success" id="exportBtn">
                                     <i class="fas fa-file-excel"></i> Export Excel
@@ -75,6 +112,24 @@
                                 </button>
                                 <button type="button" class="btn btn-primary ml-1" id="modalTambahCost"><span
                                         class="pr-2"><i class="fas fa-plus"></i></span>Tambah Calendar</button>
+                            </div>
+                        </div>
+                        <div class="d-flex gap-3 ">
+                            <div class="d-flex align-items-center icon">
+                                <span class="status-indicator available"></span>
+                                <span>Available</span>
+                            </div>
+                            <div class="d-flex align-items-center icon">
+                                <span class="status-indicator reserved"></span>
+                                <span>Reserved</span>
+                            </div>
+                            <div class="d-flex align-items-center icon">
+                                <span class="status-indicator confirmed"></span>
+                                <span>Confirmed</span>
+                            </div>
+                            <div class="d-flex align-items-center icon">
+                                <span class="status-indicator unavailable"></span>
+                                <span>Unavailable</span>
                             </div>
                         </div>
 
@@ -115,7 +170,51 @@
 
 @section('script')
     <script>
-        $(document).ready(function() {
+        function getCurrentMonth() {
+            const months = [
+                'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+                'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'
+            ];
+
+            const currentDate = new Date();
+            const currentMonth = months[currentDate.getMonth()];
+            const currentYear = currentDate.getFullYear();
+
+            return `${currentMonth} ${currentYear}`;
+        }
+
+        let selectedMonth = '';
+
+        $(document).ready(function () {
+            $('#calendarTitle').text(getCurrentMonth());
+
+            const monthFilterInput = $('#monthEvent');
+
+            const flatpickrInstance = flatpickr(monthFilterInput[0], {
+                plugins: [
+                    new monthSelectPlugin({
+                        shorthand: true,
+                        dateFormat: "M Y",
+                        altFormat: "M Y",
+                        theme: "light"
+                    })
+                ],
+                onChange: function (selectedDates, dateStr, instance) {
+                    const selectedDate = selectedDates[0];
+                    selectedMonth = instance.formatDate(selectedDate, "M Y");
+                    $('#calendarTitle').text(selectedMonth);
+                    getDataDashboard();
+                }
+            });
+
+            function triggerChange() {
+                const today = new Date();
+                flatpickrInstance.setDate(today, true);
+            }
+
+            triggerChange();
+        });
+        $(document).ready(function () {
             let today = new Date();
             let year = today.getFullYear();
             let month = today.getMonth();
@@ -132,11 +231,12 @@
                 $headerRow.append(`<th>${formattedDate}</th>`);
             }
 
-            $tableBody.find("tr").each(function() {
+            $tableBody.find("tr").each(function () {
                 for (let day = 1; day <= daysInMonth; day++) {
                     $(this).append("<td></td>");
                 }
             });
         });
+
     </script>
 @endsection
