@@ -9,7 +9,7 @@
             <h1 class="h3 mb-0 text-gray-800 px-4 font-weight-bold" style="color: #45a9ea;">Data Property</h1>
             <ol class="breadcrumb bg-light px-3 py-2 rounded shadow-sm">
                 <li class="breadcrumb-item text-secondary">Property</li>
-                <li class="breadcrumb-item active font-weight-bold" style="color: #45a9ea;" aria-current="page">Data
+                <li class="breadcrumb-item text-secondary">Data
                     Property</li>
             </ol>
         </div>
@@ -108,17 +108,17 @@
                                         <tr>
                                             <th>Properti</th>
                                                 <th>Proyek</th>
-                                                <!-- <th>Blok</th>
+                                                <th>Blok</th>
                                                 <th>No</th>
                                                 <th>LB</th>
-                                                <th>LT</th> -->
+                                                <th>LT</th>
                                             <th>Status</th>
                                             <th>Tanggal Terjual</th>
                                             <th>Pembeli</th>
                                             <th>Salesperson</th>
                                             <th>Harga Pricelist</th>
                                             <th>Harga Jual</th>
-                                            <!-- <th>Invoice Bundle</th> -->
+                                            <th>Invoice Bundle</th>
                                             <th>Jenis Pembayaran</th>
                                             <th>Jumlah Terbayar</th>
                                             <th>% Terbayar</th>
@@ -126,19 +126,19 @@
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <!-- <td>Ruko 3 lantai</td>
+                                            <td>Ruko 3 lantai</td>
                                                 <td>Pilar 12</td>
                                                 <td>A</td>
                                                 <td>1</td>
                                                 <td>300</td>
-                                                <td>120</td> -->
+                                                <td>120</td>
                                             <td>Available</td>
                                             <td>-</td>
                                             <td>-</td>
                                             <td>-</td>
                                             <td>Rp2.000.000.000,00</td>
                                             <td>-</td>
-                                            <!-- <td>-</td> -->
+                                            <td>-</td>
                                             <td>-</td>
                                             <td>-</td>
                                             <td>-</td>
@@ -146,17 +146,17 @@
                                         <tr>
                                             <td>Ruko 2 lantai</td>
                                                 <td>Pilar 12</td>
-                                                <!-- <td>B</td>
+                                                <td>B</td>
                                                 <td>2</td>
                                                 <td>200</td>
-                                                <td>120</td> -->
+                                                <td>120</td>
                                             <td>Booked</td>
                                             <td>02-Jan-25</td>
                                             <td>Bambang</td>
                                             <td>Siti</td>
                                             <td>Rp1.000.000.000,00</td>
                                             <td>Rp990.000.000,00</td>
-                                            <!-- <td>P12B2&C3</td> -->
+                                            <td>P12B2&C3</td>
                                             <td>Cash keras</td>
                                             <td>Rp5.000.000,00</td>
                                             <td>0,51%</td>
@@ -164,17 +164,17 @@
                                         <tr>
                                             <td>Ruko 2 lantai</td>
                                                 <td>Pilar 12</td>
-                                                <!-- <td>C</td>
+                                                <td>C</td>
                                                 <td>3</td>
                                                 <td>200</td>
-                                                <td>120</td> -->
+                                                <td>120</td>
                                             <td>On installment</td>
                                             <td>03-Jan-25</td>
                                             <td>Bambang</td>
                                             <td>Siti</td>
                                             <td>Rp1.000.000.000,00</td>
                                             <td>Rp1.000.000.000,00</td>
-                                            <!-- <td>P12B2&C3</td> -->
+                                            <td>P12B2&C3</td>
                                             <td>Cash bertahap 24x</td>
                                             <td>Rp300.000.000,00</td>
                                             <td>30,00%</td>
@@ -182,17 +182,17 @@
                                         <tr>
                                             <td>Rumah 2 lantai</td>
                                                 <td>Victory</td>
-                                                <!-- <td>D</td>
+                                                <td>D</td>
                                                 <td>4</td>
                                                 <td>140</td>
-                                                <td>100</td> -->
+                                                <td>100</td>
                                             <td>Overdue</td>
                                             <td>04-Jan-25</td>
                                             <td>Bambang</td>
                                             <td>Siti</td>
                                             <td>Rp800.000.000,00</td>
                                             <td>Rp800.000.000,00</td>
-                                            <!-- <td>P12B2&C</td> -->
+                                            <td>P12B2&C</td>
                                             <td>KPR DP 10%</td>
                                             <td>Rp300.000.000,00</td>
                                             <td>37,50%</td>
@@ -200,17 +200,17 @@
                                         <tr>
                                             <td>Rumah 1 lantai</td>
                                                 <td>Padjajaran</td>
-                                                <!-- <td>E</td>
+                                                <td>E</td>
                                                 <td>5</td>
                                                 <td>30</td>
-                                                <td>60</td> -->
+                                                <td>60</td>
                                             <td>Closed</td>
                                             <td>05-Jan-25</td>
                                             <td>Bambang</td>
                                             <td>Siti</td>
                                             <td>Rp300.000.000,00</td>
                                             <td>Rp280.000.000,00</td>
-                                            <!-- <td>P12B2&C</td> -->
+                                            <td>P12B2&C</td>
                                             <td>Sewa beli</td>
                                             <td>Rp280.000.000,00</td>
                                             <td>100,00%</td>

@@ -5,6 +5,37 @@
 @section('main')
 
 
+    <style>
+        .divider {
+            display: flex;
+            align-items: center;
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .divider::before,
+        .divider::after {
+            content: '';
+            flex: 1;
+            border-bottom: 1px solid #cccccc;
+        }
+
+        .divider::before {
+            margin-right: .25em;
+        }
+
+        .divider::after {
+            margin-left: .25em;
+        }
+
+        .divider span {
+            padding: 0 10px;
+            font-weight: bold;
+            color: #555555;
+        }
+    </style>
+
+
     <div class="container-fluid" id="container-wrapper">
         <div class="d-sm-flex align-items-center justify-content-between mb-4">
             <h1 class="h3 mb-0 text-gray-800 px-4 font-weight-bold" style="color: #45a9ea;">Buat Branch</h1>
@@ -22,7 +53,7 @@
 
         <div class="row">
             <div class="col-lg-12">
-                <div class="card mb-4" style="border-color: #45a9ea;">
+                <div class="card mb-4">
                     <div class="card-body">
                         <div class="d-flex flex-row">
                             <div class="col-6">
@@ -30,73 +61,94 @@
                                     <label for="branchCabang" class="form-label fw-bold">Cabang</label>
                                     <select class="form-control col-8" name="" id="branchCabang"
                                         style="border-color: #45a9ea;">
-                                        <option value="" selected disabled>Pilih Branch</option>
+                                        <option value="" selected disabled>Pilih Cabang</option>
                                         <option value="newton">Newton</option>
                                         <option value="Newnewton">Newnewton</option>
                                     </select>
                                     <!-- <div id="currencyInvoiceError" class="text-danger mt-1 d-none">Silahkan Pilih Currency
-                                        terlebih dahulu</div> -->
+                                                                        terlebih dahulu</div> -->
                                 </div>
                                 <div class="mt-3">
-                                    <label for="tanggal" class="form-label fw-bold">Tanggal
-                                        Buat</label>
-                                    <input type="text" class="form-control col-8" id="tanggalBuat" value=""
-                                        placeholder="Pilih tanggal" disabled style="border-color: #45a9ea;">
+                                    <label for="jumlahKamar" class="form-label fw-bold">Jumlah Kamar</label>
+                                    <input type="text" class="form-control col-8" id="jumlahKamar" value=""
+                                        placeholder="Masukkan Jumlah Kamar" style="border-color: #45a9ea;">
                                 </div>
                             </div>
                             <div class="col-6">
                                 <div class="mt-3">
-                                    <label for="currencyInvoice" class="form-label fw-bold">Currency</label>
-                                    <select class="form-control col-8" name="" id="currencyInvoice"
-                                        style="border-color: #45a9ea;">
-                                        <option value="" selected disabled>Pilih Currency</option>
-                                    </select>
-                                    <div id="currencyInvoiceError" class="text-danger mt-1 d-none">Silahkan Pilih Currency
-                                        terlebih dahulu</div>
+                                    <label for="listedDate" class="form-label fw-bold">Listed Date</label>
+                                    <input type="text" class="form-control col-8" id="listedDate" value=""
+                                        placeholder="Pilih tanggal" style="border-color: #45a9ea;">
                                 </div>
+                                <div class="mt-3">
+                                    <label for="periodeBranch" class="form-label fw-bold">Periode</label>
+                                    <input type="text" class="form-control col-8" id="periodeBranch" value=""
+                                        placeholder="Pilih tanggal" style="border-color: #45a9ea;">
+                                </div>
+
                             </div>
+                        </div>
+                        <div class="divider mt-4">
+                            <span>Admin</span>
                         </div>
                         <div class="d-flex">
                             <div class="col-6">
-
-
+                                <div class="mt-3">
+                                    <label for="namaAdmin" class="form-label fw-bold">Nama Admin</label>
+                                    <select class="form-control col-8" name="" id="namaAdmin"
+                                        style="border-color: #45a9ea;">
+                                        <option value="" selected disabled>Pilih Admin</option>
+                                        <option value="Lisa">Lisa</option>
+                                        <option value="Ilham">Ilham</option>
+                                    </select>
+                                    <!-- <div id="currencyInvoiceError" class="text-danger mt-1 d-none">Silahkan Pilih Currency
+                                                                        terlebih dahulu</div> -->
+                                </div>
+                                <div class="mt-3">
+                                    <label for="emailBranch" class="form-label fw-bold">Email</label>
+                                    <input type="email" class="form-control col-8" id="emailBranch" value=""
+                                        placeholder="Masukkan Email" style="border-color: #45a9ea;">
+                                </div>
                             </div>
                             <div class="col-6">
-
+                                <div class="mt-3">
+                                    <label for="noHpBranch" class="form-label fw-bold">No Hp</label>
+                                    <input type="text" class="form-control col-8" id="noHpBranch" value=""
+                                        placeholder="Masukkan No Hp" style="border-color: #45a9ea;">
+                                </div>
                             </div>
                         </div>
-                        <div class="form-group row">
-
+                        <div class="divider mt-4">
+                            <span>AVG</span>
                         </div>
-
-                        <div class="form-group row mt-3">
-
+                        <div class="d-flex">
+                            <div class="col-6">
+                                <div class="mt-3">
+                                    <label for="avgLeastRate" class="form-label fw-bold">Avg Least Rate</label>
+                                    <input type="text" class="form-control col-8" id="avgLeastRate" value=""
+                                        placeholder="Masukkan Jumlah Rate" style="border-color: #45a9ea;">
+                                </div>
+                                <div class="mt-3">
+                                    <label for="avgTenantTurnoverRate" class="form-label fw-bold">Avg Tenant Turnover
+                                        Rate</label>
+                                    <input type="text" class="form-control col-8" id="avgTenantTurnoverRate" value=""
+                                        placeholder="Masukkan Jumlah Rate" style="border-color: #45a9ea;">
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="mt-3">
+                                    <label for="avgIncome" class="form-label fw-bold">Avg Income</label>
+                                    <input type="text" class="form-control col-8" id="avgIncome" value=""
+                                        placeholder="Masukkan Jumlah Rate" style="border-color: #45a9ea;">
+                                </div>
+                                <div class="mt-3">
+                                    <label for="avgOccupancy" class="form-label fw-bold">Avg Occupancy</label>
+                                    <input type="text" class="form-control col-8" id="avgOccupancy" value=""
+                                        placeholder="Masukkan Jumlah Rate" style="border-color: #45a9ea;">
+                                </div>
+                            </div>
                         </div>
-
-                        <div class="form-grup row mt-3">
-
-                        </div>
-
-                        <!-- Tabel Input Berat dan Dimensi -->
-                        <table class="table mt-4">
-                            <thead>
-                                <tr>
-                                    <th>No.</th>
-                                    <th>No. Resi</th>
-                                    <th>Berat/Dimensi</th>
-                                    <th>Hitungan</th>
-                                    <th>Harga</th>
-                                    <th></th>
-                                </tr>
-                            </thead>
-                            <tbody id="barang-list">
-                            </tbody>
-                        </table>
-
-                        <div class="row">
-
-                        </div>
-                        <div class="col-12 mt-4">
+                        <div class="col-12 mt-5">
                             <div class="col-4 float-right">
                                 <p class="mb-0">Total Harga</p>
                                 <div class="box bg-light text-dark p-3 mt-2"

@@ -84,12 +84,12 @@
                                 <thead>
                                         <tr>
                                             <th>Total :</th>
-                                            <!-- <th></th>
                                             <th></th>
                                             <th></th>
                                             <th></th>
                                             <th></th>
-                                            <th></th> -->
+                                            <th></th>
+                                            <th></th>
                                             <th></th>
                                             <th>Rp. 5.707.000.000,00</th>
                                             <th></th>
@@ -109,12 +109,12 @@
                                     </thead>
                                 <thead style="background-color: #45a9ea; color: white;">
                                     <tr>
-                                        <!-- <th>Properti</th>
+                                        <th>Properti</th>
                                         <th>Proyek</th>
                                         <th>Blok</th>
                                         <th>No</th>
                                         <th>LB</th>
-                                        <th>LT</th> -->
+                                        <th>LT</th>
                                         <th>Pembeli</th>
                                         <th>Salesperson</th>
                                         <th>Harga Jual</th>
@@ -135,12 +135,12 @@
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <!-- <td>Ruko 3 lantai</td>
+                                        <td>Ruko 3 lantai</td>
                                         <td>Pilar 12</td>
                                         <td>A</td>
                                         <td>1</td>
                                         <td>300</td>
-                                        <td>120</td> -->
+                                        <td>120</td>
                                         <td>Bambang</td>
                                         <td>Siti</td>
                                         <td>Rp2.000.000.000,00</td>
@@ -159,12 +159,12 @@
                                         <td>0,25%</td>
                                     </tr>
                                     <tr>
-                                        <!-- <td>Ruko 2 lantai</td>
+                                        <td>Ruko 2 lantai</td>
                                         <td>Pilar 12</td>
                                         <td>B</td>
                                         <td>2</td>
                                         <td>200</td>
-                                        <td>120</td> -->
+                                        <td>120</td>
                                         <td>Bambang</td>
                                         <td>Siti</td>
                                         <td>Rp990.000.000,00</td>
@@ -183,12 +183,12 @@
                                         <td>20,20%</td>
                                     </tr>
                                     <tr>
-                                        <!-- <td>Ruko 2 lantai</td>
+                                        <td>Ruko 2 lantai</td>
                                         <td>Pilar 12</td>
                                         <td>C</td>
                                         <td>3</td>
                                         <td>200</td>
-                                        <td>120</td> -->
+                                        <td>120</td>
                                         <td>Bambang</td>
                                         <td>Siti</td>
                                         <td>Rp1.000.000.000,00</td>
@@ -207,12 +207,12 @@
                                         <td>0,83%</td>
                                     </tr>
                                     <tr>
-                                        <!-- <td>Rumah 2 lantai</td>
+                                        <td>Rumah 2 lantai</td>
                                         <td>Victory</td>
                                         <td>D</td>
                                         <td>4</td>
                                         <td>140</td>
-                                        <td>100</td> -->
+                                        <td>100</td>
                                         <td>Bambang</td>
                                         <td>Siti</td>
                                         <td>Rp800.000.000,00</td>
@@ -231,12 +231,12 @@
                                         <td>25,00%</td>
                                     </tr>
                                     <tr>
-                                        <!-- <td>Rumah 1 lantai</td>
+                                        <td>Rumah 1 lantai</td>
                                         <td>Padjajaran</td>
                                         <td>E</td>
                                         <td>5</td>
                                         <td>30</td>
-                                        <td>60</td> -->
+                                        <td>60</td>
                                         <td>Bambang</td>
                                         <td>Siti</td>
                                         <td>Rp280.000.000,00</td>

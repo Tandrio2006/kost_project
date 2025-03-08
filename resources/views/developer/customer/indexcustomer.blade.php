@@ -91,11 +91,11 @@
                                         <th>No. HP 1</th>
                                         <th>No. HP 2</th>
                                         <th>Email</th>
-                                        <!-- <th>Tipe</th>
+                                        <th>Tipe</th>
                                         <th>Unit Pembelian</th>
                                         <th>Salesperson</th>
                                         <th>Keyword</th>
-                                        <th>Notes</th> -->
+                                        <th>Notes</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -108,11 +108,11 @@
                                         <td>-</td>
                                         <td>-</td>
                                         <td>-</td>
-                                        <!-- <td>Pembeli</td>
+                                        <td>Pembeli</td>
                                         <td>-</td>
                                         <td>-</td>
                                         <td>-</td>
-                                        <td>-</td> -->
+                                        <td>-</td>
                                     </tr>
                                     <tr>
                                     <td>PT ABC</td>
@@ -123,11 +123,11 @@
                                         <td>-</td>
                                         <td>-</td>
                                         <td>-</td>
-                                        <!-- <td>Salesperson</td>
+                                        <td>Salesperson</td>
                                         <td>-</td>
                                         <td>-</td>
                                         <td>-</td>
-                                        <td>-</td> -->
+                                        <td>-</td>
                                     </tr>
                                 </tbody>
                             </table>
