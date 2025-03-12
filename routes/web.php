@@ -39,6 +39,7 @@ Route::middleware('auth')->group(function () {
 
     //developer
     Route::get('/proyek', [ProyekController::class, 'index'])->name('proyek');
+    Route::post('/storeProyek', [ProyekController::class, 'store'])->name('store');
 
     Route::get('/payment', [PaymentController::class, 'index'])->name('payment');
     Route::get('/indexaddpayment', [PaymentController::class, 'indexaddpayment'])->name('indexaddpayment');
@@ -50,6 +51,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/indexaddproperty', [PropertyController::class, 'indexaddproperty'])->name('indexaddproperty');
 
     Route::get('/customer', [CustomerController::class, 'index'])->name('customer');
+    Route::get('/createCustomer', [CustomerController::class, 'create'])->name('createCustomer');
 
     Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 });

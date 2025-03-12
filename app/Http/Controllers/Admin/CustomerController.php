@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Customer;
 
 class CustomerController extends Controller
 {
@@ -12,6 +13,14 @@ class CustomerController extends Controller
         if (!Auth::check()) {
             return redirect()->route('login');
         }
-        return view('developer.customer.indexcustomer');
+
+        $customer = Customer::all();
+
+        return view('developer.customer.indexcustomer', compact('customer') );
+    }
+
+    public function create()
+    {
+        //
     }
 }
