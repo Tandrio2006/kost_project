@@ -23,12 +23,13 @@ return new class extends Migration
             $table->string('email');
             $table->foreignId('customer_type_id')->constrained()->onDelete('cascade');
             $table->string('unit');
-            $table->foreignId('salesperson_id')->constrained('customers')->onDelete('cascade');
+            $table->foreignId('salesperson_id')->nullable()->constrained('customers')->onDelete('cascade');
             $table->string('keywords');
             $table->string('notes');
             $table->timestamps();
         });
     }
+
 
     /**
      * Reverse the migrations.
