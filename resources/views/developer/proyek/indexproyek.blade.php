@@ -120,12 +120,12 @@
                                 </button>
                             </div>
                             <div>
-                                <button class="btn text-white mr-1 bg-success" id="exportBtn">
+                                <!-- <button class="btn text-white mr-1 bg-success" id="exportBtn">
                                     <i class="fas fa-file-excel"></i> Export Excel
                                 </button>
                                 <button class="btn btn-danger" id="btnExportInvoice">
                                     <i class="fas fa-file-pdf"></i> Export PDF
-                                </button>
+                                </button> -->
                                 <button type="button" class="btn btn-primary ml-1" data-toggle="modal"
                                     data-target="#modalTambahProyek">
                                     <span class="pr-2"><i class="fas fa-plus"></i></span>Add Proyek
