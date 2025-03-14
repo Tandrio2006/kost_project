@@ -6,7 +6,7 @@
     <style>
         .seat-container {
             display: grid;
-            grid-template-columns: repeat(18, 50px);
+            grid-template-columns: repeat(14, 50px);
             gap: 10px;
             justify-content: center;
             margin-top: 20px;
@@ -61,6 +61,35 @@
         .unavailable {
             background-color: gray;
             color: white;
+        }
+        .status-indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 8px;
+            border: 1px solid black;
+        }
+
+        .icon {
+            margin-right: 10px;
+            margin-bottom: 5px;
+        }
+
+        .available-status {
+            background-color: white;
+        }
+
+        .reserved-status {
+            background-color: #FFB433;
+        }
+
+        .confirmed-status {
+            background-color: #45a9ea;
+        }
+
+        .unavailable-status {
+            background-color: grey;
         }
     </style>
 
@@ -126,88 +155,110 @@
                                     </div>
                                 </div>
 
-                                <div class="container text-center mt-5">
-                                    <h2 class="text-primary"><b>Daftar Kost</b></h2>
+                                <div class="container mt-5">
+                                    <div class="row">
+                                        <div class="col-md-3" style="margin-top: 70px;">
+                                            <h2 class="text-primary mb-4">Status</h2>
+                                            <div class="d-flex align-items-center icon">
+                                                <span class="status-indicator available-status"></span>
+                                                <span>Available</span>
+                                            </div>
+                                            <div class="d-flex align-items-center icon">
+                                                <span class="status-indicator reserved-status"></span>
+                                                <span>Reserved</span>
+                                            </div>
+                                            <div class="d-flex align-items-center icon">
+                                                <span class="status-indicator confirmed-status"></span>
+                                                <span>Confirmed</span>
+                                            </div>
+                                            <div class="d-flex align-items-center icon">
+                                                <span class="status-indicator unavailable-status"></span>
+                                                <span>Unavailable</span>
+                                            </div>
+                                        </div>
 
-                                    <div class="seat-container">
-                                        <div class="seat confirmed">112</div>
-                                        <div class="seat available">113</div>
-                                        <div class="seat available">114</div>
-                                        <div class="seat available">115</div>
-                                        <div class="seat available">116</div>
-                                        <div class="seat available">117</div>
 
-                                        <div class="seat unavailable">118</div>
-                                        <div class="seat available">119</div>
-                                        <div class="seat confirmed">120</div>
-                                        <div class="seat available">121</div>
-                                        <div class="seat available">123</div>
-                                        <div class="seat available">124</div>
+                                        <div class="col-md-9">
+                                            <h2 class="text-primary text-center mb-4">Daftar Kost</h2>
+                                            <div class="seat-container">
+                                                <div class="seat confirmed">112</div>
+                                                <div class="seat available">113</div>
+                                                <div class="seat available">114</div>
+                                                <div class="seat available">115</div>
+                                                <div class="seat available">116</div>
+                                                <div class="seat available">117</div>
 
-                                        <div class="seat available">211</div>
-                                        <div class="seat available">212</div>
-                                        <div class="seat available">213</div>
-                                        <div class="seat available">214</div>
-                                        <div class="seat confirmed">215</div>
-                                        <div class="seat available">216</div>
+                                                <div class="seat unavailable">118</div>
+                                                <div class="seat available">119</div>
+                                                <div class="seat confirmed">120</div>
+                                                <div class="seat available">121</div>
+                                                <div class="seat available">123</div>
+                                                <div class="seat available">124</div>
 
-                                        <div class="seat available">217</div>
-                                        <div class="seat confirmed">218</div>
-                                        <div class="seat available">219</div>
-                                        <div class="seat available">220</div>
-                                        <div class="seat available">311</div>
-                                        <div class="seat reserved">312</div>
-                                        <div class="seat confirmed">313</div>
-                                        <div class="seat available">314</div>
-                                        <div class="seat unavailable">315</div>
-                                        <div class="seat available">316</div>
-                                        <div class="seat available">317</div>
-                                        <div class="seat available">318</div>
+                                                <div class="seat available">211</div>
+                                                <div class="seat available">212</div>
+                                                <div class="seat available">213</div>
+                                                <div class="seat available">214</div>
+                                                <div class="seat confirmed">215</div>
+                                                <div class="seat available">216</div>
 
-                                        <div class="seat available">319</div>
-                                        <div class="seat available">320</div>
-                                        <div class="seat confirmed">321</div>
-                                        <div class="seat unavailable">411</div>
-                                        <div class="seat available">412</div>
-                                        <div class="seat available">413</div>
+                                                <div class="seat available">217</div>
+                                                <div class="seat confirmed">218</div>
+                                                <div class="seat available">219</div>
+                                                <div class="seat available">220</div>
+                                                <div class="seat available">311</div>
+                                                <div class="seat reserved">312</div>
+                                                <div class="seat confirmed">313</div>
+                                                <div class="seat available">314</div>
+                                                <div class="seat unavailable">315</div>
+                                                <div class="seat available">316</div>
+                                                <div class="seat available">317</div>
+                                                <div class="seat available">318</div>
 
-                                        <div class="seat available">414</div>
-                                        <div class="seat reserved">415</div>
-                                        <div class="seat available">416</div>
-                                        <div class="seat available">417</div>
-                                        <div class="seat confirmed">418</div>
-                                        <div class="seat available">419</div>
+                                                <div class="seat available">319</div>
+                                                <div class="seat available">320</div>
+                                                <div class="seat confirmed">321</div>
+                                                <div class="seat unavailable">411</div>
+                                                <div class="seat available">412</div>
+                                                <div class="seat available">413</div>
 
-                                        <div class="seat available">420</div>
-                                        <div class="seat confirmed">421</div>
-                                        <div class="seat available">422</div>
-                                        <div class="seat reserved">423</div>
-                                        <div class="seat available">424</div>
-                                        <div class="seat available">425</div>
+                                                <div class="seat available">414</div>
+                                                <div class="seat reserved">415</div>
+                                                <div class="seat available">416</div>
+                                                <div class="seat available">417</div>
+                                                <div class="seat confirmed">418</div>
+                                                <div class="seat available">419</div>
 
-                                        <div class="seat confirmed">511</div>
-                                        <div class="seat available">512</div>
-                                        <div class="seat available">513</div>
-                                        <div class="seat available">514</div>
-                                        <div class="seat reserved">515</div>
-                                        <div class="seat available">516</div>
+                                                <div class="seat available">420</div>
+                                                <div class="seat confirmed">421</div>
+                                                <div class="seat available">422</div>
+                                                <div class="seat reserved">423</div>
+                                                <div class="seat available">424</div>
+                                                <div class="seat available">425</div>
 
-                                        <div class="seat available">517</div>
-                                        <div class="seat unavailable">518</div>
-                                        <div class="seat confirmed">519</div>
-                                        <div class="seat available">520</div>
-                                        <div class="seat reserved">611</div>
-                                        <div class="seat available">612</div>
+                                                <div class="seat confirmed">511</div>
+                                                <div class="seat available">512</div>
+                                                <div class="seat available">513</div>
+                                                <div class="seat available">514</div>
+                                                <div class="seat reserved">515</div>
+                                                <div class="seat available">516</div>
 
-                                        <div class="seat reserved">613</div>
-                                        <div class="seat available">614</div>
-                                        <div class="seat available">615</div>
-                                        <div class="seat available">616</div>
-                                        <div class="seat confirmed">617</div>
-                                        <div class="seat available">618</div>
+                                                <div class="seat available">517</div>
+                                                <div class="seat unavailable">518</div>
+                                                <div class="seat confirmed">519</div>
+                                                <div class="seat available">520</div>
+                                                <div class="seat reserved">611</div>
+                                                <div class="seat available">612</div>
 
+                                                <div class="seat reserved">613</div>
+                                                <div class="seat available">614</div>
+                                                <div class="seat available">615</div>
+                                                <div class="seat available">616</div>
+                                                <div class="seat confirmed">617</div>
+                                                <div class="seat available">618</div>
+                                            </div>
+                                        </div>
                                     </div>
-
                                 </div>
                             </div>
                         </div>
@@ -252,88 +303,110 @@
                                     </div>
                                 </div>
 
-                                <div class="container text-center mt-5">
-                                    <h2 class="text-primary"><b>Daftar Kost</b></h2>
+                                <div class="container mt-5">
+                                    <div class="row">
+                                        <div class="col-md-3" style="margin-top: 70px;">
+                                            <h2 class="text-primary mb-4">Status</h2>
+                                            <div class="d-flex align-items-center icon">
+                                                <span class="status-indicator available-status"></span>
+                                                <span>Available</span>
+                                            </div>
+                                            <div class="d-flex align-items-center icon">
+                                                <span class="status-indicator reserved-status"></span>
+                                                <span>Reserved</span>
+                                            </div>
+                                            <div class="d-flex align-items-center icon">
+                                                <span class="status-indicator confirmed-status"></span>
+                                                <span>Confirmed</span>
+                                            </div>
+                                            <div class="d-flex align-items-center icon">
+                                                <span class="status-indicator unavailable-status"></span>
+                                                <span>Unavailable</span>
+                                            </div>
+                                        </div>
 
-                                    <div class="seat-container">
-                                        <div class="seat confirmed">A1</div>
-                                        <div class="seat available">A2</div>
-                                        <div class="seat available">A3</div>
-                                        <div class="seat available">A4</div>
-                                        <div class="seat available">A5</div>
-                                        <div class="seat available">A6</div>
 
-                                        <div class="seat unavailable">B1</div>
-                                        <div class="seat available">B2</div>
-                                        <div class="seat confirmed">B3</div>
-                                        <div class="seat available">B4</div>
-                                        <div class="seat available">B5</div>
-                                        <div class="seat available">B6</div>
+                                        <div class="col-md-9">
+                                            <h2 class="text-primary text-center mb-4">Daftar Kost</h2>
+                                            <div class="seat-container">
+                                                <div class="seat confirmed">112</div>
+                                                <div class="seat available">113</div>
+                                                <div class="seat available">114</div>
+                                                <div class="seat available">115</div>
+                                                <div class="seat available">116</div>
+                                                <div class="seat available">117</div>
 
-                                        <div class="seat available">C1</div>
-                                        <div class="seat available">C2</div>
-                                        <div class="seat available">C3</div>
-                                        <div class="seat available">C4</div>
-                                        <div class="seat confirmed">C5</div>
-                                        <div class="seat available">C6</div>
+                                                <div class="seat unavailable">118</div>
+                                                <div class="seat available">119</div>
+                                                <div class="seat confirmed">120</div>
+                                                <div class="seat available">121</div>
+                                                <div class="seat available">123</div>
+                                                <div class="seat available">124</div>
 
-                                        <div class="seat available">D1</div>
-                                        <div class="seat available">D2</div>
-                                        <div class="seat available">D3</div>
-                                        <div class="seat available">D4</div>
-                                        <div class="seat available">D5</div>
-                                        <div class="seat reserved">D6</div>
-                                        <div class="seat confirmed">A1</div>
-                                        <div class="seat confirmed">A2</div>
-                                        <div class="seat unavailable">A3</div>
-                                        <div class="seat available">A4</div>
-                                        <div class="seat available">A5</div>
-                                        <div class="seat available">A6</div>
+                                                <div class="seat available">211</div>
+                                                <div class="seat available">212</div>
+                                                <div class="seat available">213</div>
+                                                <div class="seat available">214</div>
+                                                <div class="seat confirmed">215</div>
+                                                <div class="seat available">216</div>
 
-                                        <div class="seat available">B1</div>
-                                        <div class="seat available">B2</div>
-                                        <div class="seat confirmed">B3</div>
-                                        <div class="seat unavailable">B4</div>
-                                        <div class="seat available">B5</div>
-                                        <div class="seat confirmed">B6</div>
+                                                <div class="seat available">217</div>
+                                                <div class="seat confirmed">218</div>
+                                                <div class="seat available">219</div>
+                                                <div class="seat available">220</div>
+                                                <div class="seat available">311</div>
+                                                <div class="seat reserved">312</div>
+                                                <div class="seat confirmed">313</div>
+                                                <div class="seat available">314</div>
+                                                <div class="seat unavailable">315</div>
+                                                <div class="seat available">316</div>
+                                                <div class="seat available">317</div>
+                                                <div class="seat available">318</div>
 
-                                        <div class="seat reserved">C1</div>
-                                        <div class="seat reserved">C2</div>
-                                        <div class="seat confirmed">C3</div>
-                                        <div class="seat available">C4</div>
-                                        <div class="seat confirmed">C5</div>
-                                        <div class="seat confirmed">C6</div>
+                                                <div class="seat available">319</div>
+                                                <div class="seat available">320</div>
+                                                <div class="seat confirmed">321</div>
+                                                <div class="seat unavailable">411</div>
+                                                <div class="seat available">412</div>
+                                                <div class="seat available">413</div>
 
-                                        <div class="seat available">D1</div>
-                                        <div class="seat confirmed">D2</div>
-                                        <div class="seat reserved">D3</div>
-                                        <div class="seat available">D4</div>
-                                        <div class="seat available">D5</div>
-                                        <div class="seat confirmed">D6</div>
+                                                <div class="seat available">414</div>
+                                                <div class="seat reserved">415</div>
+                                                <div class="seat available">416</div>
+                                                <div class="seat available">417</div>
+                                                <div class="seat confirmed">418</div>
+                                                <div class="seat available">419</div>
 
-                                        <div class="seat available">A1</div>
-                                        <div class="seat confirmed">A2</div>
-                                        <div class="seat available">A3</div>
-                                        <div class="seat available">A4</div>
-                                        <div class="seat reserved">A5</div>
-                                        <div class="seat available">A6</div>
+                                                <div class="seat available">420</div>
+                                                <div class="seat confirmed">421</div>
+                                                <div class="seat available">422</div>
+                                                <div class="seat reserved">423</div>
+                                                <div class="seat available">424</div>
+                                                <div class="seat available">425</div>
 
-                                        <div class="seat available">B1</div>
-                                        <div class="seat unavailable">B2</div>
-                                        <div class="seat confirmed">B3</div>
-                                        <div class="seat available">B4</div>
-                                        <div class="seat reserved">B5</div>
-                                        <div class="seat available">B6</div>
+                                                <div class="seat confirmed">511</div>
+                                                <div class="seat available">512</div>
+                                                <div class="seat available">513</div>
+                                                <div class="seat available">514</div>
+                                                <div class="seat reserved">515</div>
+                                                <div class="seat available">516</div>
 
-                                        <div class="seat available">C1</div>
-                                        <div class="seat available">C2</div>
-                                        <div class="seat confirmed">C3</div>
-                                        <div class="seat available">C4</div>
-                                        <div class="seat confirmed">C5</div>
-                                        <div class="seat available">C6</div>
+                                                <div class="seat available">517</div>
+                                                <div class="seat unavailable">518</div>
+                                                <div class="seat confirmed">519</div>
+                                                <div class="seat available">520</div>
+                                                <div class="seat reserved">611</div>
+                                                <div class="seat available">612</div>
 
+                                                <div class="seat reserved">613</div>
+                                                <div class="seat available">614</div>
+                                                <div class="seat available">615</div>
+                                                <div class="seat available">616</div>
+                                                <div class="seat confirmed">617</div>
+                                                <div class="seat available">618</div>
+                                            </div>
+                                        </div>
                                     </div>
-
                                 </div>
                             </div>
                         </div>

@@ -89,11 +89,11 @@
                                             <th>Total :</th>
                                             <th></th>
                                                 <th></th>
-                                                <!-- <th></th>
                                                 <th></th>
                                                 <th></th>
-                                                <th></th> -->
-                                            <!-- <th></th> -->
+                                                <th></th>
+                                                <th></th> 
+                                            <th></th>
                                             <th></th>
                                             <th></th>
                                             <th></th>
