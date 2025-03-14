@@ -73,8 +73,8 @@
                                 <button class="btn btn-danger" id="btnExportCustomer">
                                     <i class="fas fa-file-pdf"></i> Export PDF
                                 </button>
-                                <button type="button" class="btn btn-primary ml-1" id="modalTambahCost"><span
-                                        class="pr-2"><i class="fas fa-plus"></i></span>Tambah Customer</button>
+                                <a href="{{ route('createCustomer') }}" class="btn btn-primary ml-1"><span
+                                        class="pr-2"><i class="fas fa-plus"></i></span>Add Customer </a>
                             </div>
                         </div>
 
@@ -99,36 +99,23 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>PT ABC</td>
-                                        <td>Bapak</td>
-                                        <td>Bambang Budiono</td>
-                                        <td>2171010203669000</td>
-                                        <td>Bambang</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>Pembeli</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                    </tr>
-                                    <tr>
-                                    <td>PT ABC</td>
-                                        <td>Bapak</td>
-                                        <td>Bambang Budiono</td>
-                                        <td>2171010203669000</td>
-                                        <td>Bambang</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>Salesperson</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                    </tr>
+                                    @foreach ($customer as $customer)
+                                        <tr>
+                                            <td>{{$customer->company_name}}</td>
+                                            <td>{{$customer->title}}</td>
+                                            <td>{{$customer->name}}</td>
+                                            <td>{{$customer->no_ktp}}</td>
+                                            <td>{{$customer->alias}}</td>
+                                            <td>{{$customer->no_hp}}</td>
+                                            <td>{{$customer->no_hp2}}</td>
+                                            <td>{{$customer->email}}</td>
+                                            <!-- <td>Pembeli</td>
+                                            <td>-</td>
+                                            <td>-</td>
+                                            <td>-</td>
+                                            <td>-</td> -->
+                                        </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>
