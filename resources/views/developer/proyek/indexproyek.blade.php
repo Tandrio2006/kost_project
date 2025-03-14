@@ -348,7 +348,7 @@
                                     toast: true,
                                     position: 'top-end',
                                     icon: 'success',
-                                    title: 'Proyek berhasil diupdate!',
+                                    title: 'Proyek berhasil diHapus!',
                                     showConfirmButton: false,
                                     timer: 1000
                                 }).then(() => {
