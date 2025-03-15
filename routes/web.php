@@ -54,8 +54,10 @@ Route::middleware('auth')->group(function () {
     Route::get('/property', [PropertyController::class, 'index'])->name('property');
     Route::get('/indexaddproperty', [PropertyController::class, 'indexaddproperty'])->name('indexaddproperty');
 
+    // Customer
     Route::get('/customer', [CustomerController::class, 'index'])->name('customer');
-    Route::get('/createCustomer', [CustomerController::class, 'create'])->name('createCustomer');
+    Route::post('/customers/store', [CustomerController::class, 'store'])->name('customers.store');
+    Route::get('/customer/gelistcustomer', [CustomerController::class, 'gelistcustomer'])->name('customer.list');
 
     Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 });

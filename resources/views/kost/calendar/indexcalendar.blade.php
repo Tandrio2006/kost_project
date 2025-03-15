@@ -115,7 +115,7 @@
                                     </tr>
                                     <tr>
                                         <td>Pilar 12</td>
-                                        <td>Stpandard</td>
+                                        <td>Standard</td>
                                         <td>301</td>
                                     </tr>
                                 </tbody>
@@ -202,70 +202,100 @@
         //     });
         // });
 
-        function getCurrentMonth() {
-        const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-        const currentDate = new Date();
-        const currentMonth = months[currentDate.getMonth()];
-        const currentYear = currentDate.getFullYear();
-        return `${currentMonth} ${currentYear}`;
-    }
 
-    function updateTableForMonth(year, month) {
-        let daysInMonth = new Date(year, month + 1, 0).getDate();
-        let monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-        let monthName = monthNames[month];
+        const dummyData = [
+            { branch: "Newton", type: "Standard", room: "201", startDate: "2025-03-01", endDate: "2025-03-05", status: "available" },
+            { branch: "Newton", type: "Standard", room: "201", startDate: "2025-03-06", endDate: "2025-03-12", status: "reserved" },
+            { branch: "Pilar 12", type: "Standard", room: "301", startDate: "2025-03-03", endDate: "2025-03-10", status: "unavailable" },
+            { branch: "Pilar 12", type: "Standard", room: "301", startDate: "2025-03-11", endDate: "2025-03-15", status: "confirmed" }
+        ];
 
-        let $headerRow = $("#headerRow");
-        let $tableBody = $("#tableBody");
 
-        // Hapus tanggal lama
-        $headerRow.find("th:gt(2)").remove();
-        $tableBody.find("tr").each(function () {
-            $(this).find("td:gt(2)").remove();
-        });
-
-        // Tambahkan tanggal baru
-        for (let day = 1; day <= daysInMonth; day++) {
-            let formattedDate = `${day}-${monthName}-${year}`;
-            $headerRow.append(`<th>${formattedDate}</th>`);
+        function isDateInRange(date, startDate, endDate) {
+            return date >= startDate && date <= endDate;
         }
 
-        // Tambahkan sel kosong untuk setiap tanggal dalam bulan
-        $tableBody.find("tr").each(function () {
+
+        function getCurrentMonth() {
+            const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+            const currentDate = new Date();
+            const currentMonth = months[currentDate.getMonth()];
+            const currentYear = currentDate.getFullYear();
+            return `${currentMonth} ${currentYear}`;
+        }
+
+        function updateTableForMonth(year, month) {
+            let daysInMonth = new Date(year, month + 1, 0).getDate();
+            let monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+            let monthName = monthNames[month];
+
+            let $headerRow = $("#headerRow");
+            let $tableBody = $("#tableBody");
+
+            $headerRow.find("th:gt(2)").remove();
+            $tableBody.find("tr").each(function() {
+                $(this).find("td:gt(2)").remove();
+            });
+
             for (let day = 1; day <= daysInMonth; day++) {
-                $(this).append("<td></td>");
+                let formattedDate = `${day}-${monthName}-${year}`;
+                $headerRow.append(`<th>${formattedDate}</th>`);
             }
+
+            $tableBody.find("tr").each(function() {
+                let branch = $(this).find("td:eq(0)").text().trim();
+                let type = $(this).find("td:eq(1)").text().trim();
+                let room = $(this).find("td:eq(2)").text().trim();
+
+                for (let day = 1; day <= daysInMonth; day++) {
+                    let formattedDate =
+                        `${year}-${(month + 1).toString().padStart(2, '0')}-${day.toString().padStart(2, '0')}`;
+                    let cell = $("<td></td>");
+
+                    let entry = dummyData.find(d =>
+                        d.branch === branch &&
+                        d.type === type &&
+                        d.room === room &&
+                        isDateInRange(formattedDate, d.startDate, d.endDate)
+                    );
+
+                    if (entry) {
+                        cell.addClass(entry.status);
+                    }
+
+                    $(this).append(cell);
+                }
+            });
+
+        }
+
+        $(document).ready(function() {
+            $('#calendarTitle').text(getCurrentMonth());
+
+            const monthFilterInput = $('#monthEvent');
+
+            const flatpickrInstance = flatpickr(monthFilterInput[0], {
+                plugins: [
+                    new monthSelectPlugin({
+                        shorthand: true,
+                        dateFormat: "M Y",
+                        altFormat: "M Y",
+                        theme: "light"
+                    })
+                ],
+                onChange: function(selectedDates, dateStr, instance) {
+                    const selectedDate = selectedDates[0];
+                    const selectedMonth = selectedDate.getMonth();
+                    const selectedYear = selectedDate.getFullYear();
+
+                    $('#calendarTitle').text(dateStr);
+                    updateTableForMonth(selectedYear, selectedMonth);
+                }
+            });
+
+            // Inisialisasi tabel dengan bulan saat ini
+            let today = new Date();
+            updateTableForMonth(today.getFullYear(), today.getMonth());
         });
-    }
-
-    $(document).ready(function () {
-        $('#calendarTitle').text(getCurrentMonth());
-
-        const monthFilterInput = $('#monthEvent');
-
-        const flatpickrInstance = flatpickr(monthFilterInput[0], {
-            plugins: [
-                new monthSelectPlugin({
-                    shorthand: true,
-                    dateFormat: "M Y",
-                    altFormat: "M Y",
-                    theme: "light"
-                })
-            ],
-            onChange: function (selectedDates, dateStr, instance) {
-                const selectedDate = selectedDates[0];
-                const selectedMonth = selectedDate.getMonth();
-                const selectedYear = selectedDate.getFullYear();
-
-                $('#calendarTitle').text(dateStr);
-                updateTableForMonth(selectedYear, selectedMonth);
-            }
-        });
-
-        // Inisialisasi tabel dengan bulan saat ini
-        let today = new Date();
-        updateTableForMonth(today.getFullYear(), today.getMonth());
-    });
-
     </script>
 @endsection
