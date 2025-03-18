@@ -9,8 +9,7 @@ class Customer extends Model
 {
     use HasFactory;
 
-    protected $table = 'customers'; // Jika tabel berbeda dari konvensi Laravel
-
+    protected $table = 'customers';
     protected $fillable = [
         'name',
         'company_name',
@@ -65,5 +64,10 @@ class Customer extends Model
         return $query->where('name', 'LIKE', "%{$keyword}%")
             ->orWhere('no_hp', 'LIKE', "%{$keyword}%")
             ->orWhere('company_name', 'LIKE', "%{$keyword}%");
+    }
+
+    public function customerUnits()
+    {
+        return $this->hasMany(CustomerUnits::class);
     }
 }
