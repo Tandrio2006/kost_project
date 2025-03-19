@@ -16,6 +16,15 @@
             font-weight: bold;
             margin-right: 3px;
         }
+        
+        .dataTables_length,
+        .dataTables_filter {
+            display: none;
+        }
+
+        #tableCustomer {
+            width: 100% !important;
+        }
     </style>
     <div class="container-fluid" id="container-wrapper">
         <div class="d-sm-flex align-items-center justify-content-between mb-4">
@@ -121,11 +130,11 @@
                             </div>
                             <div>
                                 <!-- <button class="btn text-white mr-1 bg-success" id="exportBtn">
-                                    <i class="fas fa-file-excel"></i> Export Excel
-                                </button>
-                                <button class="btn btn-danger" id="btnExportInvoice">
-                                    <i class="fas fa-file-pdf"></i> Export PDF
-                                </button> -->
+                                                <i class="fas fa-file-excel"></i> Export Excel
+                                            </button>
+                                            <button class="btn btn-danger" id="btnExportInvoice">
+                                                <i class="fas fa-file-pdf"></i> Export PDF
+                                            </button> -->
                                 <button type="button" class="btn btn-primary ml-1" data-toggle="modal"
                                     data-target="#modalTambahProyek">
                                     <span class="pr-2"><i class="fas fa-plus"></i></span>Add Proyek
@@ -134,18 +143,18 @@
                         </div>
 
                         <div id="containerProyek" class="table-responsive">
-                            <!-- <table class="table table-hover table-bordered text-center rounded-lg shadow-sm"
-                                                                        id="tableInvoice">
-                                                                        <thead style="background-color: #45a9ea; color: white;" width="100%">
-                                                                            <tr>
-                                                                                <th style="text-align:left;" width="70%">Proyek Name</th>
-                                                                                <th style="text-align:left;" width="30%">Action</th>
-                                                                            </tr>
-                                                                        </thead>
-                                                                        <tbody>
+                            <table class="table table-hover table-bordered text-center rounded-lg shadow-sm"
+                                id="tableProyek">
+                                <thead style="background-color: #45a9ea; color: white;" width="100%">
+                                    <tr>
+                                        <th>Proyek Name</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
 
-                                                                        </tbody>
-                                                                    </table> -->
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
@@ -158,47 +167,44 @@
     <script>
         $(document).ready(function () {
             const loadSpin = `
-                                            <div class="d-flex justify-content-center align-items-center mt-5">
-                                                <div class="spinner-grow text-primary" role="status"></div>
-                                                <div class="spinner-grow text-primary" role="status"></div>
-                                                <div class="spinner-grow text-primary" role="status"></div>
-                                                <div class="spinner-grow text-primary" role="status"></div>
-                                                <div class="spinner-grow text-primary" role="status"></div>
-                                            </div>
-                                        `;
+                                                        <div class="d-flex justify-content-center align-items-center mt-5">
+                                                            <div class="spinner-grow text-primary" role="status"></div>
+                                                            <div class="spinner-grow text-primary" role="status"></div>
+                                                            <div class="spinner-grow text-primary" role="status"></div>
+                                                            <div class="spinner-grow text-primary" role="status"></div>
+                                                            <div class="spinner-grow text-primary" role="status"></div>
+                                                        </div>
+                                                    `;
+            var table = $('#tableProyek').DataTable({
+                processing: true,
+                serverSide: true,
 
-            const getlistProyek = () => {
-                const txtSearch = $('#txSearch').val();
-
-                $.ajax({
+                ajax: {
                     url: "{{ route('getlistProyek') }}",
-                    method: "GET",
-                    data: {
-                        txSearch: txtSearch
-                    },
-                    beforeSend: () => {
-                        $('#containerProyek').html(loadSpin)
-                    }
-                })
-                    .done(res => {
-                        $('#containerProyek').html(res)
-                        $('#tableProyek').DataTable({
-                            searching: false,
-                            lengthChange: false,
-                            "bSort": true,
-                            "aaSorting": [],
-                            pageLength: 7,
-                            "lengthChange": false,
-                            responsive: true,
-                            language: {
-                                search: ""
-                            }
-                        });
-                    })
-            }
+                    type: "GET"
+                },
+                columns: [
+                    { data: 'name', name: 'name' },
+                    { data: 'action', name: 'action', orderable: false, searchable: false }
+                ],
+                order: [], // Pastikan tidak ada order default
+                lengthChange: false,
+                pageLength: 10,
+                language: {
+                    processing: '<div class="spinner-border text-primary" role="status"><span class="sr-only">Loading...</span></div>', // Custom spinner saat processing
+                    info: "_START_ to _END_ of _TOTAL_ entries",
+                    infoEmpty: "Showing 0 to 0 of 0 entries",
+                    emptyTable: "No data available in table",
+                    loadingRecords: "Loading...",
+                    zeroRecords: "No matching records found"
+                }
+            });
 
-            getlistProyek();
-
+            $('#txSearch').keyup(function(e) {
+                var searchValue = $(this).val();
+                table.search(searchValue).draw();
+            });
+            
             $('#saveProyek').on('click', function () {
                 let proyekName = $('#proyekName').val();
                 let description = $('#description').val();
@@ -231,7 +237,7 @@
                                 timer: 1000
                             }).then(() => {
                                 $('#modalTambahProyek').modal('hide');
-                                getlistProyek();
+                                $('#tableProyek').DataTable().ajax.reload();
                             });
                         },
                         error: function (xhr) {
@@ -317,7 +323,7 @@
                                 timer: 1000
                             }).then(() => {
                                 $('#modalEditProyek').modal('hide');
-                                getlistProyek();
+                                $('#tableProyek').DataTable().ajax.reload();
                             });
                         },
                         error: function (xhr) {
@@ -336,36 +342,36 @@
             $(document).on('click', '.btnDestroyProyek', function (e) {
                 let id = $(this).data('id');
 
-                        $.ajax({
-                            type: "DELETE",
-                            url: '/proyek/delete/' + id,
-                            data: {
-                                _token: $('meta[name="csrf-token"]').attr('content'),
-                                id: id,
-                            },
-                            success: function (response) {
-                                Swal.fire({
-                                    toast: true,
-                                    position: 'top-end',
-                                    icon: 'success',
-                                    title: 'Proyek berhasil diHapus!',
-                                    showConfirmButton: false,
-                                    timer: 1000
-                                }).then(() => {
-                                    getlistProyek();
-                                });
-                            },
-                            error: function (xhr) {
-                                Swal.fire({
-                                    toast: true,
-                                    position: 'top-end',
-                                    icon: 'error',
-                                    title: 'Terjadi kesalahan, coba lagi!',
-                                    showConfirmButton: false,
-                                    timer: 2000
-                                });
-                            }
+                $.ajax({
+                    type: "DELETE",
+                    url: '/proyek/delete/' + id,
+                    data: {
+                        _token: $('meta[name="csrf-token"]').attr('content'),
+                        id: id,
+                    },
+                    success: function (response) {
+                        Swal.fire({
+                            toast: true,
+                            position: 'top-end',
+                            icon: 'success',
+                            title: 'Proyek berhasil diHapus!',
+                            showConfirmButton: false,
+                            timer: 1000
+                        }).then(() => {
+                            $('#tableProyek').DataTable().ajax.reload();
                         });
+                    },
+                    error: function (xhr) {
+                        Swal.fire({
+                            toast: true,
+                            position: 'top-end',
+                            icon: 'error',
+                            title: 'Terjadi kesalahan, coba lagi!',
+                            showConfirmButton: false,
+                            timer: 2000
+                        });
+                    }
+                });
             });
         });
     </script>

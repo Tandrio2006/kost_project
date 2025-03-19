@@ -6,6 +6,7 @@ use DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Proyek;
+use Yajra\DataTables\Facades\DataTables;
 
 class ProyekController extends Controller
 {
@@ -19,40 +20,23 @@ class ProyekController extends Controller
     }
     public function getlistProyek(Request $request)
     {
-        $txSearch = '%' . strtoupper(trim($request->txSearch)) . '%';
+        try {
+            $query = Proyek::select('id', 'name', 'description');
 
-        $data = DB::table('proyeks')
-            ->select('id', 'name', 'description')
-            // ->where(function ($query) use ($txSearch) {
-            //     $query->where(DB::raw('UPPER(nama_supir)'), 'LIKE', $txSearch)
-            //         ->orWhere(DB::raw('UPPER(alamat_supir)'), 'LIKE', $txSearch)
-            //         ->orWhere(DB::raw('UPPER(no_wa)'), 'LIKE', $txSearch);
-            // })
-            ->get();
 
-        $output = '
-            <table class="table table-hover table-bordered text-center rounded-lg shadow-sm" id="tableProyek">
-                <thead style="background-color: #45a9ea; color: white;" width="100%">
-                    <tr>
-                        <th>Proyek</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
-                <tbody>';
-
-        foreach ($data as $item) {
-            $output .= '
-                <tr>
-                    <td>' . ($item->name ?? '-') . '</td>
-                    <td>
-                        <a class="btn btnUpdateProyek btn-sm btn-secondary text-white" data-id="' . $item->id . '" data-name="' . $item->name . '" data-description="' . $item->description . '"><i class="fas fa-edit"></i></a>
-                         <a class="btn btnDestroyProyek btn-sm btn-danger text-white" data-id="' . $item->id . '"><i class="fas fa-trash"></i></a>
-                    </td>
-                </tr>';
+            return DataTables::of($query)
+                ->addColumn('action', function ($row) {
+                    return ' <a class="btn btnUpdateProyek btn-sm btn-secondary text-white" data-id="' . $row->id . '" data-name="' . $row->name . '" data-description="' . $row->description . '"><i class="fas fa-edit"></i></a>
+                         <a class="btn btnDestroyProyek btn-sm btn-danger text-white" data-id="' . $row->id . '"><i class="fas fa-trash"></i></a>';
+                })
+                ->rawColumns(['action'])
+                ->escapeColumns([])
+                ->make(true);
+        } catch (\Exception $e) {
+            return response()->json([
+                'error' => $e->getMessage()
+            ], 500);
         }
-
-        $output .= '</tbody></table>';
-        return $output;
     }
 
     public function store(Request $request)

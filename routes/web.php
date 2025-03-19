@@ -49,9 +49,11 @@ Route::middleware('auth')->group(function () {
     Route::get('/indexaddpayment', [PaymentController::class, 'indexaddpayment'])->name('indexaddpayment');
 
     Route::get('/invoice', [InvoiceController::class, 'index'])->name('invoice');
+    Route::get('/invoice/gelistinvoice', [InvoiceController::class, 'getlistinvoice'])->name('invoice.list');
     Route::get('/indexaddinvoice', [InvoiceController::class, 'indexaddinvoice'])->name('indexaddinvoice');
 
     Route::get('/property', [PropertyController::class, 'index'])->name('property');
+    Route::get('/invoice/gelistinvoice', [PropertyController::class, 'getlistproperty'])->name('property.list');
     Route::get('/indexaddproperty', [PropertyController::class, 'indexaddproperty'])->name('indexaddproperty');
 
     // Customer

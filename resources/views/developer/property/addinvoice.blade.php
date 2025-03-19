@@ -4,7 +4,7 @@
 
 @section('main')
 
-<style>
+    <style>
         .divider {
             display: flex;
             align-items: center;
@@ -58,26 +58,24 @@
                         <div class="d-flex flex-row">
                             <div class="col-6">
                                 <div class="mt-3">
-                                    <label for="propertiData" class="form-label fw-bold">Properti</label>
-                                    <select class="form-control col-8" name="" id="propertiData"
-                                        style="border-color: #45a9ea;">
-                                        <option value="" selected disabled>Pilih Properti</option>
-                                        <option value="rumahLantai2">Rumah Lantai 2</option>
-                                        <option value="rumahLantai10">Rumah Lantai 10</option>
-                                    </select>
-                                    <!-- <div id="currencyInvoiceError" class="text-danger mt-1 d-none">Silahkan Pilih Currency
-                                                                                                terlebih dahulu</div> -->
+                                    <label for="noInvoice" class="form-label fw-bold">No Invoice</label>
+                                    <input type="text" class="form-control col-8" id="noInvoice" value=""
+                                        placeholder="Masukkan No Invoice" style="border-color: #45a9ea;">
                                 </div>
                                 <div class="mt-3">
-                                    <label for="tanggalTerjual" class="form-label fw-bold">Tanggal Terjual</label>
-                                    <input type="text" class="form-control col-8" id="tanggalTerjual" value=""
-                                        placeholder="Pilih tanggal" style="border-color: #45a9ea;">
+                                    <label for="propertiInvoice" class="form-label fw-bold">Properti</label>
+                                    <select class="form-control col-8" name="" id="propertiInvoice"
+                                        style="border-color: #45a9ea;">
+                                        <option value="" selected disabled>Pilih Properti</option>
+                                        <option value="pilar12">Pilar 12</option>
+                                        <option value="victory">Victory</option>
+                                    </select>
                                 </div>
                             </div>
                             <div class="col-6">
                                 <div class="mt-3">
-                                    <label for="proyekProperti" class="form-label fw-bold">Proyek</label>
-                                    <select class="form-control col-8" name="" id="proyekProperti"
+                                    <label for="proyekInvoice" class="form-label fw-bold">Proyek</label>
+                                    <select class="form-control col-8" name="" id="proyekInvoice"
                                         style="border-color: #45a9ea;">
                                         <option value="" selected disabled>Pilih Proyek</option>
                                         <option value="pilar12">Pilar 12</option>
@@ -85,29 +83,35 @@
                                     </select>
                                 </div>
                                 <div class="mt-3">
-                                    <label for="salesPerson" class="form-label fw-bold">Sales Person</label>
-                                    <select class="form-control col-8" name="" id="salesPerson"
+                                    <label for="blokInvoice" class="form-label fw-bold">Blok</label>
+                                    <select class="form-control col-8" name="" id="blokInvoice"
                                         style="border-color: #45a9ea;">
-                                        <option value="" selected disabled>Pilih Sales</option>
-                                        <option value="siti">Siti</option>
-                                        <option value="bambang">Bambang</option>
+                                        <option value="" selected disabled>Pilih Blok</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
                                     </select>
                                 </div>
 
                             </div>
                         </div>
-                        <div class="divider mt-4">
-                            <span>Pembeli</span>
-                        </div>
                         <div class="d-flex">
                             <div class="col-6">
                                 <div class="mt-3">
-                                    <label for="pembeliProperty" class="form-label fw-bold">Pembeli</label>
-                                    <select class="form-control col-8" name="" id="pembeliProperty"
+                                    <label for="invoiceNo" class="form-label fw-bold">No</label>
+                                    <select class="form-control col-8" name="" id="invoiceNo"
                                         style="border-color: #45a9ea;">
-                                        <option value="" selected disabled>Pilih Pembeli</option>
-                                        <option value="siti">Siti</option>
-                                        <option value="bambang">Bambang</option>
+                                        <option value="" selected disabled>Pilih No</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                    </select>
+                                </div>
+                                <div class="mt-3">
+                                    <label for="invoiceNo" class="form-label fw-bold">LB</label>
+                                    <select class="form-control col-8" name="" id="invoiceNo"
+                                        style="border-color: #45a9ea;">
+                                        <option value="" selected disabled>Pilih Lb</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
                                     </select>
                                 </div>
                             </div>
@@ -130,7 +134,7 @@
                                 <div class="mt-3">
                                     <label for="persenTerbayar" class="form-label fw-bold">% Terbayar</label>
                                     <input type="text" class="form-control col-8" id="persenTerbayar" value=""
-                                        placeholder="Masukkan Harga"  disabled style="border-color: #45a9ea;">
+                                        placeholder="Masukkan Harga" disabled style="border-color: #45a9ea;">
                                 </div>
                             </div>
                             <div class="col-6">
